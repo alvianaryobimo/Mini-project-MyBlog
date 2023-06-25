@@ -25,7 +25,7 @@ export const Signup = () => {
     const { token } = useParams();
     const handleSubmit = async (data) => {
         try {
-            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app/"
+            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"
             await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/auth/", data,
                 {
                     headers: {

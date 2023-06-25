@@ -16,7 +16,7 @@ export const Navbar = () => {
             boxShadow={"0px 0px 10px black"}>
             <Link to="/">
                 <Heading cursor={"pointer"} fontFamily={"monospace"} color={"white"} mt={"12px"} ml={"15px"}>
-                    MyBloggg
+                    MyBlog
                 </Heading>
                 {/* <FontAwesomeIcon icon="fa-brands fa-instagram" /> */}
             </Link>
