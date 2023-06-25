@@ -25,6 +25,7 @@ export const Signup = () => {
     const { token } = useParams();
     const handleSubmit = async (data) => {
         try {
+            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app/"
             await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/auth/", data,
                 {
                     headers: {
@@ -61,7 +62,7 @@ export const Signup = () => {
                             <Flex mt={"5px"} fontSize={"12px"} justifyContent={"center"} >
                                 <Text display={"flex"}>
                                     Already have an account?
-                                    <Link to="/login">
+                                    <Link to="/loginbyEmail">
                                         <Text _hover={{ color: "#408E91" }} color={"#71B280"}>‎ Sign In.</Text>
                                     </Link>
                                 </Text>

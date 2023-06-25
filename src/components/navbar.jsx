@@ -41,7 +41,7 @@ export const Navbar = () => {
                         </>
                     ) : (
                         <>
-                            <Link to="/login">
+                            <Link to="/loginbyEmail">
                                 <Button
                                     mr={"10px"}
                                     mt={"18px"}

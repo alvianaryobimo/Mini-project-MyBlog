@@ -1,4 +1,4 @@
-import { Box, Flex, Input, Select, Textarea, Button, Heading, VStack } from "@chakra-ui/react";
+import { Box, Flex, Input, Select, Textarea, Button, Heading, VStack, useToast } from "@chakra-ui/react";
 import { Navbar } from "../components/navbar";
 import * as Yup from "yup";
 import { Field, Form, Formik, ErrorMessage } from "formik";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const AddBlog = () => {
+    const toast = useToast();
     const [category, setCategory] = useState();
     const [file, setFile] = useState(null);
     const token = localStorage.getItem("token");
@@ -57,6 +58,14 @@ export const AddBlog = () => {
                 },
                 "content-Type": "Multiple/form-data"
             });
+            toast({
+                title: "New Article!",
+                description: "Your article uploaded!",
+                status: 'success',
+                duration: 1500,
+                isClosable: true,
+                position: "top"
+              })
             navigate("/myBlog");
             console.log(response);
         } catch (err) {

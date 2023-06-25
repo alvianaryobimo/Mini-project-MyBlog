@@ -12,13 +12,13 @@ export const TabsBox = () => {
         try {
             const response1 = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog", data);
             setData1(response1.data.result);
-            const response2 = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog/pagFav", data);
+            const response2 = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog/pagFav?page=1&orderBy=total_fav&sort=DESC", data);
             setData2(response2.data.result);
         } catch (err) {
             console.log(err);
         }
     }
-    
+
     const handleClick = (id) => {
         navigate(`detailPage/${id}`);
     }
@@ -56,7 +56,7 @@ export const TabsBox = () => {
                                             textOverflow="ellipsis"
                                             maxWidth="200px"
                                             ml={"5px"} w={"full"} fontSize={"20px"} fontFamily={"monospace"}>{item.title}</Text>
-                                        <Text  mb={"13px"} ml={"5px"}>{item.User.username}</Text>
+                                        <Text mb={"13px"} ml={"5px"}>{item.User.username}</Text>
                                     </Box>
                                 </Flex>
                             </>

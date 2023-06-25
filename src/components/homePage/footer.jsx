@@ -1,4 +1,7 @@
-import { Flex, Text, Box, Input, Button } from "@chakra-ui/react";
+import { Flex, Text, Box, Input, Button, Link } from "@chakra-ui/react";
+import { FaFacebook } from 'react-icons/fa';
+import { SiLinkedin } from 'react-icons/si';
+
 
 export const Footer = () => {
     return (
@@ -35,6 +38,18 @@ export const Footer = () => {
             </Box>
             <Text mr={"20px"} fontSize={"20px"} fontFamily={"monospace"} fontWeight={"extrabold"} >
                 Follow & Contact Us
+                <Flex mt={"20px"} justifyContent={"center"}>
+                    <Flex mr={"10px"}>
+                        <a target="_blank" href="https://www.linkedin.com">
+                            <SiLinkedin />
+                        </a>
+                    </Flex >
+                    <Flex>
+                        <a target="_blank" href="https://www.facebook.com/">
+                            <FaFacebook />
+                        </a>
+                    </Flex>
+                </Flex>
             </Text>
 
         </Flex>

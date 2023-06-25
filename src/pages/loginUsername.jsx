@@ -8,16 +8,15 @@ import { useDispatch } from "react-redux";
 import Axios from "axios";
 import { setValue } from "../redux/userSlice";
 
-export const Login = () => {
+export const LoginbyUsername = () => {
     const [show, setShow] = useState(false);
     const handleClick = () => setShow(!show);
     const [success, setSuccess] = useState();
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const loginSchema = Yup.object().shape({
-        email: Yup.string()
-            .email("Invalid email addres format")
-            .required("Email is required"),
+        username: Yup.string()
+            .required("Username is required"),
         password: Yup.string()
             .matches(/^(?=.[A-Z])/, "Password Must Contain 1 Capital")
             // .matches(/@^(?=.(\W|_))/, "Password Must Contain 1 Symbol")
@@ -44,7 +43,7 @@ export const Login = () => {
     }
     return (
         <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ username: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(value, action) => {
                 handleSubmit(value);
@@ -75,12 +74,12 @@ export const Login = () => {
                             </Flex>
                             <Flex mt={"22px"} justifyContent={"center"}>
                                 <VStack>
-                                    <Field as={Input} name="email" color={"black"} borderRadius={"20px"} border={"2px solid"}
+                                    <Field as={Input} name="username" color={"black"} borderRadius={"20px"} border={"2px solid"}
                                         justifyContent={"center"} borderColor={"#408E91"}
                                         w={"400px"} placeholder="Username" size={"md"} />
                                     <ErrorMessage
                                         component="box"
-                                        name="email"
+                                        name="username"
                                         style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
                                 </VStack>
                             </Flex>

@@ -4,6 +4,7 @@ import { Footer } from "../components/homePage/footer";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { DeleteButton } from "../components/deleteItem";
 
 
 export const DetailPage = () => {
@@ -20,12 +21,13 @@ export const DetailPage = () => {
 
     useEffect(() => {
         getarticel();
-    },);
+    }, []);
     console.log(data);
     return (
         <>
             <Navbar />
             <Flex justifyContent={"center"}>
+
                 <Box>
                     <Flex justifyContent={"center"}>
                         <Flex textAlign={"center"} justifyContent={"center"} mt={"100px"} rounded='md'
@@ -60,7 +62,10 @@ export const DetailPage = () => {
                     </Flex>
                 </Box>
             </Flex>
-            <Box mt={"40px"}>
+            <Flex mt={"30px"}>
+                <DeleteButton />
+            </Flex>
+            <Box mt={"10px"}>
                 <Footer />
             </Box>
         </>

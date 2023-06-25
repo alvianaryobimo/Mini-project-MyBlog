@@ -14,7 +14,7 @@ export default function Carousel() {
   const navigate = useNavigate();
   const getData = async (data1) => {
     try {
-      const response = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog/pagFav", data1);
+      const response = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog/pagFav?page=1&orderBy=total_fav&sort=DESC", data1);
       setData(response.data.result);
     } catch (err) {
       console.log(err);

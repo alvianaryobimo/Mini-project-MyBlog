@@ -3,7 +3,6 @@ import { Navbar } from "../components/navbar";
 import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import { useEffect, useState } from "react";
-// import { Footer } from "../components/homePage/footer";  
 
 export const Myblog = () => {
     const navigate = useNavigate();
@@ -32,13 +31,14 @@ export const Myblog = () => {
     }
     useEffect(() => {
         getMyBlog();
-    },);
+    }, []);
     return (
         <>
             <Flex>
                 <Navbar />
             </Flex>
             <Flex mt={"80px"} justifyContent={"center"}>
+            
                 <Heading color={"#408E91"} fontSize={"50px"} fontFamily={"monospace"} >
                     My Blog
                 </Heading>
@@ -54,6 +54,7 @@ export const Myblog = () => {
                 {blog?.map((item, index) => {
                     return (
                         <>
+                           
                             <Box mb={"20px"} onClick={() => handleClick(item.id)} key={index} bgGradient="linear(#71B280, #408E91)"
                                 border={"2px solid"}
                                 mt={"20px"}

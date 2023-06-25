@@ -12,7 +12,9 @@ export const Verify = () => {
     console.log(token);
     const getVerified = async () => {
         try {
-            const response = await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {}, { headers: header });
+
+            const response = await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {
+            }, { headers: header });
             navigate("/login")
             console.log(response);
         } catch (err) {
