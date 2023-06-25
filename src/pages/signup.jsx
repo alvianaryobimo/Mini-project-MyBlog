@@ -32,7 +32,7 @@ export const Signup = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
-            navigate("/login");
+            navigate("/loginbyUsername");
             console.log(data);
         } catch (err) {
             console.log(err);
