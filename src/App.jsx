@@ -24,6 +24,8 @@ const router = createBrowserRouter([
   { path: "/signup", element: <Signup />, },
   { path: "/forgotPassword", element: <ForgotPass />, },
   { path: "/verification/:token", element: <Verify />, },
+  { path: "/verification-change-email/:token", element: <Verify />, },
+  { path: "/verification-change-email/:token", element: <Verify />, },
   { path: "/profile", element: <Profile />, },
   { path: "/addBlog", element: <AddBlog />, },
   { path: "/myBlog", element: <Myblog />, },

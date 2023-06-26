@@ -18,6 +18,7 @@ export const PhoneEdit = () => {
             Authorization: `Bearer ${token}`
         }
         try {
+            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"
             const response = await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/auth/changePhone`,
                 data, { headers });
             console.log(response.data);

@@ -11,7 +11,7 @@ export const PasswordEdit = () => {
             .required("Current Username is required!"),
         password: Yup.string()
             .required("New Username is required!"),
-        confrimPassword: Yup.string()
+        confirmPassword: Yup.string()
             .oneOf([Yup.ref("password")], "Password is not same")
             .required("New Username is required!"),
     })
@@ -20,6 +20,7 @@ export const PasswordEdit = () => {
             Authorization: `Bearer ${token}`
         }
         try {
+            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"
             const response = await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/auth/changePass`,
                 data, { headers });
             console.log(response);
@@ -30,7 +31,7 @@ export const PasswordEdit = () => {
     const initialValues = {
         currentPassword: "",
         password: "",
-        confrimPassword: "",
+        confirmPassword: "",
     }
     return (
         <Formik onSubmit={(value) => {
