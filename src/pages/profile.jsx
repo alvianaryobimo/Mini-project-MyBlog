@@ -1,12 +1,13 @@
 import { Box, Flex, Button, Text, Heading, Input } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { UsernameEdit } from "../components/profile/usernameEdit";
 import { Navbar } from "../components/navbar";
-import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react'
 import { EmailEdit } from "../components/profile/emaiEdit";
 import { PhoneEdit } from "../components/profile/phoneEdit";
 import { PasswordEdit } from "../components/profile/passEdit";
+import { AddIcon } from "@chakra-ui/icons";
 
 export const Profile = () => {
     const data = useSelector((state) => state.user.value);
@@ -27,23 +28,34 @@ export const Profile = () => {
                         <Box ml={"37px"} mt={"48px"} borderRadius={"10px"}
                             boxShadow='0px 0px 6px black' bg={"white"} w={"300px"} h={"350px"}>
                             <Flex justifyContent={"center"} >
-                                <Box mt={"20px"} boxShadow={"0px 0px 4px black"} borderRadius={"50%"} bg={"grey"} w={"150px"} h={"150px"}>
+                                <Box mt={"35px"} boxShadow={"0px 0px 4px black"} borderRadius={"50%"} bg={"grey"} w={"150px"} h={"150px"}>
                                 </Box>
                             </Flex>
-                            <Flex justifyContent={"center"}>
-                                <Input
-                                    borderRadius={"5px"}
-                                    w={"205px"}
+                            <Flex
+                                mt={"-23px"}
+                                ml={"75px"}
+                                justifyContent={"center"}>
+                                <label htmlFor="customFileInput">
+                                    <Text
+                                        fontSize={"10px"}
+                                        as="span"
+                                        bg="green.500"
+                                        color="white"
+                                        px={"7px"}
+                                        pb={"5px"}
+                                        pt={"4px"}
+                                        borderRadius="md"
+                                        cursor="pointer"
+                                        _hover={{ bg: 'green.600' }}>
+                                        <AddIcon />
+                                    </Text>
+                                </label>
+                                <input
                                     type="file"
-                                    mt={"15px"}
-                                    size={"sm"}
-                                    bg={"#D8D8D8"}
-                                    color={"white"}
-                                    bgGradient="linear(#408E91, #71B280)"
-                                    _hover={{ bgColor: "grey" }} />
-                             
+                                    id="customFileInput"
+                                    style={{ display: 'none' }} />
                             </Flex>
-                            <Flex mt={"10px"} justifyContent={"center"}>
+                            <Flex mt={"15px"} justifyContent={"center"}>
                                 <Heading fontSize={"25px"} fontWeight={"extrabold"} fontFamily={"monospace"}>
                                     {data.username}
                                 </Heading>

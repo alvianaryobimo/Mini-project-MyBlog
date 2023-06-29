@@ -38,7 +38,7 @@ export const Home = () => {
     useEffect(() => {
         getPagination(page);
     }, []);
-    
+
     return (
         <Box bg={"white"} pt={"90px"}>
             <Flex ml={"48px"}>
@@ -66,8 +66,6 @@ export const Home = () => {
                     {data?.map((item, index) => {
                         return (
                             <>
-
-
                                 <Box key={index} onClick={() => handleClick(item.id)}
                                     mb={"10px"} bg={"white"}
                                     mt={"8px"} border={"3px solid #408E91"}
@@ -92,7 +90,12 @@ export const Home = () => {
                                     <Flex mt={"6px"} ml={"20px"}>
                                         <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={"md"} mt={'0px'} />
                                         <Box mt={"3px"}>
-                                            <Text ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}>
+                                            <Text
+                                                overflow="hidden"
+                                                whiteSpace="nowrap"
+                                                textOverflow="ellipsis"
+                                                maxWidth="165px"
+                                                ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}>
                                                 by {item.User.username}
                                             </Text>
                                             <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>

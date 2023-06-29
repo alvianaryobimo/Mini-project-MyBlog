@@ -1,10 +1,11 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/homePage/footer";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DeleteButton } from "../components/deleteItem";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 
 
 export const DetailPage = () => {
@@ -48,22 +49,29 @@ export const DetailPage = () => {
                         </Flex>
                     </Flex>
                     <Flex fontSize={"15px"} fontFamily={"monospace"} mt={"0px"} justifyContent={"center"}>
+
                         <Text>by {data?.User.username}</Text>
                     </Flex>
                     <Flex justifyContent={"center"}>
-                        <Flex justifyContent={"center"} mt={"20px"} rounded='md'
+                        <Box justifyContent={"center"}
+                            pl={"10px"} mt={"20px"}
+                            rounded='md'
                             boxShadow='0px 0px 5px black'
                             bg={"white"} w={"800px"} >
                             <Flex mb={"10px"} mt={"10px"} w={"750px"} >
                                 <p lineHeight={"100px"}>
                                     {data?.content}  </p>
                             </Flex>
-                        </Flex>
+
+                        </Box>
                     </Flex>
                 </Box>
             </Flex>
-            <Flex mt={"30px"}>
+            <Flex  mt={"30px"}>
                 <DeleteButton />
+                <Button color={"white"} bg={"teal"} mt={"12px"} mr={"10px"} size={"xs"}>
+                    <CheckCircleIcon /> ‎ Like this article
+                </Button>
             </Flex>
             <Box mt={"10px"}>
                 <Footer />
