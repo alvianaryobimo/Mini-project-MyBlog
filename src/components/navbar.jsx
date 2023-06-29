@@ -26,7 +26,7 @@ export const Navbar = () => {
                     <Link to="/" >Home</Link>
                 </Text>
                 <Text mr={"20px"} mt={"24px"}>
-                    <Link to="/"><SearchIcon></SearchIcon></Link>
+                    <Link to="/search"><SearchIcon></SearchIcon></Link>
                 </Text>
                 {token ?
                     (
@@ -41,7 +41,7 @@ export const Navbar = () => {
                         </>
                     ) : (
                         <>
-                            <Link to="/loginbyEmail">
+                            <Link to="/login">
                                 <Button
                                     mr={"10px"}
                                     mt={"18px"}

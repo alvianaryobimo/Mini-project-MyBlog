@@ -15,7 +15,7 @@ export const Signup = () => {
             .required("Number must be more than 11 characters"),
         password: Yup.string()
             .matches(/^(?=.[A-Z])/, "Password Must Contain 1 Capital")
-            // .matches(/@^(?=.(\W|_))/, "Password Must Contain 1 Symbol")
+            // .matches(/^(?=.(\W|_))/, "Password Must Contain 1 Symbol")
             .required("Password is required"),
         confirmPassword: Yup.string()
             .oneOf([Yup.ref("password")], "Password is not same")
@@ -25,7 +25,7 @@ export const Signup = () => {
     const { token } = useParams();
     const handleSubmit = async (data) => {
         try {
-            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"
+            data.FE_URL = window.location.origin;
             await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/auth/", data,
                 {
                     headers: {
@@ -62,7 +62,7 @@ export const Signup = () => {
                             <Flex mt={"5px"} fontSize={"12px"} justifyContent={"center"} >
                                 <Text display={"flex"}>
                                     Already have an account?
-                                    <Link to="/loginbyEmail">
+                                    <Link to="/login">
                                         <Text _hover={{ color: "#408E91" }} color={"#71B280"}>‎ Sign In.</Text>
                                     </Link>
                                 </Text>

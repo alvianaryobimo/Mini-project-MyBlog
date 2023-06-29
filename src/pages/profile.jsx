@@ -1,4 +1,4 @@
-import { Box, Flex, Button, Text, Heading } from "@chakra-ui/react";
+import { Box, Flex, Button, Text, Heading, Input } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { UsernameEdit } from "../components/profile/usernameEdit";
@@ -24,13 +24,26 @@ export const Profile = () => {
                 <Flex justifyContent={"center"}>
                     <Flex mt={"135px"} borderRadius={"10px"}
                         boxShadow='0px 0px 6px black' bgGradient="linear(#408E91, #71B280)" w={"800px"} h={"450px"}>
-                        <Box ml={"30px"} mt={"48px"} borderRadius={"10px"}
+                        <Box ml={"37px"} mt={"48px"} borderRadius={"10px"}
                             boxShadow='0px 0px 6px black' bg={"white"} w={"300px"} h={"350px"}>
                             <Flex justifyContent={"center"} >
-                                <Box mt={"25px"} boxShadow={"0px 0px 4px black"} borderRadius={"50%"} bg={"grey"} w={"150px"} h={"150px"}>
+                                <Box mt={"20px"} boxShadow={"0px 0px 4px black"} borderRadius={"50%"} bg={"grey"} w={"150px"} h={"150px"}>
                                 </Box>
                             </Flex>
-                            <Flex mt={"20px"} justifyContent={"center"}>
+                            <Flex justifyContent={"center"}>
+                                <Input
+                                    borderRadius={"5px"}
+                                    w={"205px"}
+                                    type="file"
+                                    mt={"15px"}
+                                    size={"sm"}
+                                    bg={"#D8D8D8"}
+                                    color={"white"}
+                                    bgGradient="linear(#408E91, #71B280)"
+                                    _hover={{ bgColor: "grey" }} />
+                             
+                            </Flex>
+                            <Flex mt={"10px"} justifyContent={"center"}>
                                 <Heading fontSize={"25px"} fontWeight={"extrabold"} fontFamily={"monospace"}>
                                     {data.username}
                                 </Heading>
@@ -49,7 +62,7 @@ export const Profile = () => {
                                 <Button
                                     onClick={onLogout}
                                     w={"200px"}
-                                    mt={"20px"}
+                                    mt={"8px"}
                                     size={"sm"}
                                     bg={"#D8D8D8"}
                                     color={"white"}

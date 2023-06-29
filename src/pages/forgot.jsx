@@ -8,6 +8,7 @@ export const ForgotPass = () => {
             .email("Invalid email addres format")
             .required("Email is required"),
     });
+    console.log(forgotPass);
     return (
         <Box display={"flex"} justifyContent={"center"} pt={"120px"} bgGradient="linear(#408E91, #71B280)" h={"648"}>
             <Box rounded='md'

@@ -15,7 +15,7 @@ export const Verify = () => {
 
             const response = await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {
             }, { headers: header });
-            navigate("/loginbyUsername")
+            navigate("/loginbyUsername");
             console.log(response);
         } catch (err) {
             console.log(err);

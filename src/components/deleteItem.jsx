@@ -16,7 +16,7 @@ export const DeleteButton = () => {
                 title: "Success",
                 description: "Delete blog success!",
                 status: 'success',
-                duration: 1500,
+                duration: 2500,
                 isClosable: true,
                 position: "top"
             })

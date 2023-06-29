@@ -57,9 +57,6 @@ export const Home = () => {
             </Flex>
 
             <Flex justifyContent={"center"} mb={"30px"}>
-
-
-
                 <Flex flexWrap={"wrap"} pb={"10px"}
                     boxShadow='0px 0px 6px black'
                     borderRadius={"10px"}

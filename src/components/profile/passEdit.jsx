@@ -20,7 +20,7 @@ export const PasswordEdit = () => {
             Authorization: `Bearer ${token}`
         }
         try {
-            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"
+            data.FE_URL = window.location.origin;
             const response = await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/auth/changePass`,
                 data, { headers });
             console.log(response);

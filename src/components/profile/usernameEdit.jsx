@@ -18,8 +18,8 @@ export const UsernameEdit = () => {
             Authorization: `Bearer ${token}`
         }
         try {
-            const response = await Axios.patch(`https://mi
-            data.FE_URL = "https://sensational-daffodil-08643f.netlify.app"npro-blog.purwadhikabootcamp.com/api/auth/changeUsername`,
+            data.FE_URL = window.location.origin
+            const response = await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/auth/changeUsername`,
                 data, { headers });
             console.log(response.value.username);
         } catch (error) {
