@@ -14,9 +14,11 @@ export const Signup = () => {
         phone: Yup.string()
             .required("Number must be more than 11 characters"),
         password: Yup.string()
-            .matches(/^(?=.[A-Z])/, "Password Must Contain 1 Capital")
-            // .matches(/^(?=.(\W|_))/, "Password Must Contain 1 Symbol")
-            .required("Password is required"),
+            .required("Password is required")
+            .min(6, "Paasowrd min 6 ")
+            .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
+            .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
+            .matches(/.*[0-9].*/, "Password Must Contain 1 number"),
         confirmPassword: Yup.string()
             .oneOf([Yup.ref("password")], "Password is not same")
             .required("have to same"),

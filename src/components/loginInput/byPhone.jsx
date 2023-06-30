@@ -19,9 +19,11 @@ export const LoginbyPhone = () => {
         phone: Yup.string()
             .required("Phone is required"),
         password: Yup.string()
-            .matches(/^(?=.[A-Z])/, "Password Must Contain 1 Capital")
-            // .matches(/^(?=.(\W|_))/, "Password Must Contain 1 Symbol")
             .required("Password is required")
+            .min(6, "Paasowrd min 6 ")
+            .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
+            .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
+            .matches(/.*[0-9].*/, "Password Must Contain 1 number")
     });
 
     const handleSubmit = async (data) => {
