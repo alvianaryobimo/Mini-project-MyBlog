@@ -1,10 +1,9 @@
-import { Avatar, Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator, Text, Flex, Box } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
 import Axios from "axios";
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Avatar, Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator, Text, Flex, Box } from '@chakra-ui/react';
 
 export const TabsBox = () => {
-
     const [data1, setData1] = useState();
     const [data2, setData2] = useState();
     const navigate = useNavigate();
@@ -18,14 +17,12 @@ export const TabsBox = () => {
             console.log(err);
         }
     }
-
     const handleClick = (id) => {
         navigate(`detailPage/${id}`);
     }
     useEffect(() => {
         getData();
     }, []);
-
     return (
         <Tabs isFitted w={"500px"} position="relative" variant="unstyled">
             <TabList

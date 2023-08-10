@@ -1,11 +1,11 @@
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import Axios from "axios";
 import { Navbar } from "../components/navbar";
 import { Footer } from "../components/homePage/footer";
-import Axios from "axios";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DeleteButton } from "../components/deleteItem";
 import { CheckCircleIcon } from "@chakra-ui/icons";
+import { useEffect, useState } from "react";
+import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 
 export const DetailPage = () => {

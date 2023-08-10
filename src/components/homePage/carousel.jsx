@@ -1,13 +1,13 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "./style.css";
-import { Autoplay, Navigation, Pagination } from "swiper";
 import Axios from "axios"
+import { Autoplay, Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Image, Heading, Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import "swiper/css";
+import "swiper/css/navigation";
+import "./style.css";
 
 export default function Carousel() {
   const [data, setData] = useState();
@@ -25,7 +25,7 @@ export default function Carousel() {
   }
   useEffect(() => {
     getData();
-  },);
+  }, []);
   return (
     <Swiper
       loop={true} navigation={true}

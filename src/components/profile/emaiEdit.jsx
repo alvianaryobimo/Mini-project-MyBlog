@@ -1,7 +1,7 @@
-import { Box, Flex, Heading, Input, Button } from "@chakra-ui/react";
-import * as Yup from "yup";
 import Axios from "axios";
+import * as Yup from "yup";
 import { Formik, ErrorMessage, Field, Form } from "formik";
+import { Box, Flex, Heading, Input, Button } from "@chakra-ui/react";
 
 export const EmailEdit = () => {
     const token = localStorage.getItem("token");

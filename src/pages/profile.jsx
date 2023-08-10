@@ -1,13 +1,13 @@
-import { Box, Flex, Button, Text, Heading, Input } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react'
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { UsernameEdit } from "../components/profile/usernameEdit";
 import { Navbar } from "../components/navbar";
 import { EmailEdit } from "../components/profile/emaiEdit";
 import { PhoneEdit } from "../components/profile/phoneEdit";
 import { PasswordEdit } from "../components/profile/passEdit";
+import { Box, Flex, Button, Text, Heading } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { AddIcon } from "@chakra-ui/icons";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react'
 
 export const Profile = () => {
     const data = useSelector((state) => state.user.value);

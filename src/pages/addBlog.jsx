@@ -1,10 +1,10 @@
-import { Box, Flex, Input, Select, Textarea, Button, Heading, VStack, useToast } from "@chakra-ui/react";
-import { Navbar } from "../components/navbar";
-import * as Yup from "yup";
-import { Field, Form, Formik, ErrorMessage } from "formik";
 import Axios from "axios";
+import * as Yup from "yup"; 
+import { Navbar } from "../components/navbar";
+import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Box, Flex, Input, Select, Textarea, Button, Heading, VStack, useToast } from "@chakra-ui/react";
 
 export const AddBlog = () => {
     const toast = useToast();
@@ -166,7 +166,7 @@ export const AddBlog = () => {
                                 </VStack>
                             </Box>
                             <VStack justifyContent={"center"}>
-                                <Field as={Textarea} name="content" ml={"15px"} placeholder="Content" border={"2px solid"} borderColor={"#408E91"} h={"331px"} w={"600px"} mt={"35px"}></Field> <br />
+                                <Field as={ Textarea} name="content" ml={"15px"} placeholder="Content" border={"2px solid"} borderColor={"#408E91"} h={"331px"} w={"600px"} mt={"35px"}></Field> <br />
                                 <ErrorMessage
                                     component="Box"
                                     name="content"

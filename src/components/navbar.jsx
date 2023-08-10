@@ -1,6 +1,6 @@
-import { Button, Flex, Heading, Text, Avatar } from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons';
 import { Link } from "react-router-dom";
+import { SearchIcon } from '@chakra-ui/icons';
+import { Button, Flex, Heading, Text, Avatar } from '@chakra-ui/react';
 
 export const Navbar = () => {
     const token = localStorage.getItem("token");
@@ -18,7 +18,6 @@ export const Navbar = () => {
                 <Heading cursor={"pointer"} fontFamily={"monospace"} color={"white"} mt={"12px"} ml={"15px"}>
                     MyBlog
                 </Heading>
-                {/* <FontAwesomeIcon icon="fa-brands fa-instagram" /> */}
             </Link>
             <Flex mr={"10px"} fontFamily={"mono"} color={"white"}>
 

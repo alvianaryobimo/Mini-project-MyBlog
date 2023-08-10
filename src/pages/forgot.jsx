@@ -1,6 +1,6 @@
+import * as Yup from "yup";
 import { Box, Text, Flex, Input, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import * as Yup from "yup";
 
 export const ForgotPass = () => {
     const forgotPass = Yup.object().shape({

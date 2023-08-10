@@ -10,11 +10,11 @@ export const Login = () => {
 
     return (
         <Box display={"flex"}
-            justifyContent={"center"} h={"648"}
+            justifyContent={"center"} h={"100vh"}
             bgGradient="linear(#408E91, #71B280)">
             <Box rounded='md'
                 boxShadow='0px 0px 10px black'
-                bg={"white"} mt={"130px"} w={"500px"} h={"420px"}>
+                bg={"white"} margin={"auto"} w={"500px"} h={"420px"}>
                 <Text display={"flex"} justifyContent={"center"}
                     mt={"25px"} fontSize={"50px"} color={"#245953"}
                     fontWeight={"extrabold"} fontFamily={"monospace"} >
@@ -28,7 +28,6 @@ export const Login = () => {
                         </Link>
                     </Text>
                 </Flex>
-
                 <Tabs mt={"10px"} align={"center"} variant='unstyled'>
                     <TabList>
                         <Tab><AttachmentIcon mt={"2px"} boxSize={5} /></Tab>

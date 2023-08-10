@@ -1,26 +1,23 @@
-import { Avatar, Box, Button, Divider, Flex, FormControl, FormLabel, HStack, Heading, Image, Input, Menu, MenuButton, MenuItem, MenuList, Select, Text } from "@chakra-ui/react"
 import Axios from "axios"
-import { useEffect, useState } from "react"
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
-import { useNavigate } from "react-router-dom"
 import { Navbar } from "../components/navbar"
 import { Footer } from "../components/homePage/footer"
-
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import { Avatar, Box, Button, Divider, Flex, FormControl, FormLabel, Heading, Image, Input, Menu, MenuButton, MenuItem, MenuList, Select, Text } from "@chakra-ui/react"
 
 export const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [categories, setCategories] = useState();
     const [searchResults, setSearchResults] = useState([]);
-    const [sorting, setSorting] = useState("DESC")
-    const [page, setPage] = useState(null)
-    const [totalPage, setTotalPage] = useState(null)
+    const [sorting, setSorting] = useState("DESC");
+    const [page, setPage] = useState(null);
+    const [totalPage, setTotalPage] = useState(null);
     const navigate = useNavigate()
-
     useEffect(() => {
         fetchCategories();
     }, []);
-
     const onClick = (id) => {
         navigate(`/detailPage/${id}`)
     }
@@ -75,7 +72,7 @@ export const Search = () => {
             </Flex>
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
-                    <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" h="220px" w="570px" p="15px" borderRadius="10px"   boxShadow={"0px 0px 7px black"}>
+                    <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" h="220px" w="570px" p="15px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
                         <FormControl>
                             <FormLabel color="white">Search</FormLabel>
                             <Input color="white" type="text" value={searchTerm} onChange={handleInputChange} borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />

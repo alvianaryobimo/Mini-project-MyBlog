@@ -1,44 +1,38 @@
-import { Avatar, Box, Flex, Image, Text, Button } from "@chakra-ui/react";
-import Carousel from "./carousel";
-import { TabsBox } from "./tabs";
 import Axios from "axios";
+import Carousel from "./carousel";
+import { Avatar, Box, Flex, Image, Text, Button } from "@chakra-ui/react";
+import { TabsBox } from "./tabs";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
 
-
 export const Home = () => {
     const [data, setData] = useState();
-    const [page, setPage] = useState(1)
-    const [totalPage, setTotalPage] = useState(1)
+    const [page, setPage] = useState(1);
+    const [totalPage, setTotalPage] = useState(1);
     const navigate = useNavigate();
     const getPagination = async (pageNum) => {
         try {
             const response = await Axios.get(`https://minpro-blog.purwadhikabootcamp.com/api/blog?page=${pageNum}&size=8`, data);
             setData(response.data.result);
-            setPage(response.data.blogPage)
-            setTotalPage(response.data.page)
+            setPage(response.data.blogPage);
+            setTotalPage(response.data.page);
         } catch (err) {
             console.log(err);
         }
     }
-
     const goToPrevPage = () => {
         if (page > 1) getPagination(page - 1);
     }
-
     const goToNextPage = () => {
         if (page < totalPage) getPagination(page + 1);
     }
-
     const handleClick = (id) => {
         navigate(`detailPage/${id}`);
     }
-
     useEffect(() => {
         getPagination(page);
     }, []);
-
     return (
         <Box bg={"white"} pt={"90px"}>
             <Flex ml={"48px"}>
@@ -105,7 +99,6 @@ export const Home = () => {
 
                                     </Flex>
                                 </Box>
-
                             </>
                         );
                     })}

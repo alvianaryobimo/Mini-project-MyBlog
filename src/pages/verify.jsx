@@ -1,7 +1,7 @@
-import { Box, Text, Flex, Button } from "@chakra-ui/react";
 import Axios from "axios";
 import { Formik } from "formik";
 import { useNavigate, useParams } from "react-router-dom";
+import { Box, Text, Flex, Button } from "@chakra-ui/react";
 
 export const Verify = () => {
     const { token } = useParams();
@@ -12,11 +12,9 @@ export const Verify = () => {
     console.log(token);
     const getVerified = async () => {
         try {
-
             const response = await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {
             }, { headers: header });
             navigate("/loginbyUsername");
-            console.log(response);
         } catch (err) {
             console.log(err);
         }

@@ -1,8 +1,8 @@
-import { Box, Button, Flex, Input, Text, VStack } from "@chakra-ui/react";
+import Axios from "axios";
+import * as Yup from "yup";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Field, ErrorMessage, Formik, Form } from "formik";
-import * as Yup from "yup";
-import Axios from "axios";
+import { Box, Button, Flex, Input, Text, VStack } from "@chakra-ui/react";
 
 export const Signup = () => {
     const loginSchema = Yup.object().shape({

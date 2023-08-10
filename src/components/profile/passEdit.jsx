@@ -1,8 +1,8 @@
-import { Box, Flex, Heading, Input, Button, Text } from "@chakra-ui/react";
-import * as Yup from "yup";
 import Axios from "axios";
-import { Formik, ErrorMessage, Field, Form } from "formik";
+import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { Formik, ErrorMessage, Field, Form } from "formik";
+import { Box, Flex, Heading, Input, Button, Text } from "@chakra-ui/react";
 
 export const PasswordEdit = () => {
     const token = localStorage.getItem("token");
@@ -46,9 +46,9 @@ export const PasswordEdit = () => {
                     </Heading>
                 </Flex>
                 <Link to="/forgotPassword">
-                                <Text mt={"0px"} ml={"5px"}
-                                    color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
-                            </Link>
+                    <Text mt={"0px"} ml={"5px"}
+                        color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
+                </Link>
                 <Flex mt={"8px"} justifyContent={"center"}>
                     <Field as={Input} name="currentPassword"
                         color={"black"}
@@ -93,7 +93,7 @@ export const PasswordEdit = () => {
                         Change
                     </Button>
                 </Flex>
-                    
+
             </Box>
         </Formik>
     );

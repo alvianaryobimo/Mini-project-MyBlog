@@ -1,12 +1,12 @@
-import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Field, ErrorMessage, Formik, Form } from "formik";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
 import Axios from "axios";
+import * as Yup from "yup";
 import { setValue } from "../../redux/userSlice";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { Field, ErrorMessage, Formik, Form } from "formik";
+import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
 
 export const LoginbyPhone = () => {
     const toast = useToast();
@@ -41,12 +41,9 @@ export const LoginbyPhone = () => {
                 isClosable: true,
                 position: "top"
             });
-            setTimeout(() => {
-                navigate("/");
-            }, 1000)
+            setTimeout(() => navigate("/"), 1000)
             console.log(data);
-
-        } catch (err) {
+        } catch (err) { 
             console.log(err.response.data);
             setSuccess(false);
             alert(err.response.data);

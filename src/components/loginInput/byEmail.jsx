@@ -1,12 +1,12 @@
-import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Field, ErrorMessage, Formik, Form } from "formik";
-import * as Yup from "yup";
-import { useDispatch } from "react-redux";
 import Axios from "axios";
+import * as Yup from "yup";
 import { setValue } from "../../redux/userSlice";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { Field, ErrorMessage, Formik, Form } from "formik";
+import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
 
 export const LoginbyEmail = () => {
     const toast = useToast();
@@ -26,7 +26,6 @@ export const LoginbyEmail = () => {
         .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
         .matches(/.*[0-9].*/, "Password Must Contain 1 number")
     });
-
     const handleSubmit = async (data1) => {
         try {
             const response = await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/auth/login", data1);

@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { HomePage } from "./pages/home";
 import { Signup } from "./pages/signup";
 import { ForgotPass } from "./pages/forgot";
-import { ErrorPage } from "./pages/Error";
+import { ErrorPage } from "./pages/404";
 import { Verify } from "./pages/verify";
 import { useEffect } from "react";
 import { Profile } from "./pages/profile";
@@ -37,9 +37,8 @@ function App() {
         headers: {
           Authorization: `Bearer ${token}`
         }
-      })
+      });
       dispatch(setValue(response.data));
-      console.log(response.data);
     }
     catch (error) {
       console.log(error);

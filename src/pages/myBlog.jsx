@@ -1,14 +1,12 @@
-import { Flex, Button, Heading, Box, Image, Text, Avatar } from "@chakra-ui/react";
+import Axios from "axios";
 import { Navbar } from "../components/navbar";
 import { Link, useNavigate } from "react-router-dom";
-import Axios from "axios";
 import { useEffect, useState } from "react";
+import { Flex, Button, Heading, Box, Image, Text, Avatar } from "@chakra-ui/react";
 
 export const Myblog = () => {
     const navigate = useNavigate();
-    
     const token = localStorage.getItem("token");
-
     const [blog, setBlog] = useState();
     const getMyBlog = async () => {
         try {
@@ -26,8 +24,6 @@ export const Myblog = () => {
     const handleClick = (id) => {
         navigate(`/`)
         navigate(`detailPage/${id}`);
-        window.location.reload()
-
     }
     useEffect(() => {
         getMyBlog();
