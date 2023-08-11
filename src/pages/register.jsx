@@ -1,8 +1,8 @@
 import Axios from "axios";
 import * as Yup from "yup";
-import { Link, useNavigate, useParams } from "react-router-dom";
 import { Field, ErrorMessage, Formik, Form } from "formik";
-import { Box, Button, Flex, Input, Text, VStack } from "@chakra-ui/react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
 
 export const Signup = () => {
     const loginSchema = Yup.object().shape({
@@ -15,7 +15,7 @@ export const Signup = () => {
             .required("Number must be more than 11 characters"),
         password: Yup.string()
             .required("Password is required")
-            .min(6, "Paasowrd min 6 ")
+            .min(6, "Password min 6 ")
             .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
             .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
             .matches(/.*[0-9].*/, "Password Must Contain 1 number"),
@@ -23,8 +23,9 @@ export const Signup = () => {
             .oneOf([Yup.ref("password")], "Password is not same")
             .required("have to same"),
     })
-    const navigate = useNavigate();
     const { token } = useParams();
+    const navigate = useNavigate();
+    const toast = useToast();
     const handleSubmit = async (data) => {
         try {
             data.FE_URL = window.location.origin;
@@ -34,10 +35,22 @@ export const Signup = () => {
                         Authorization: `Bearer ${token}`
                     }
                 });
+            toast({
+                title: "Register Success!",
+                description: "Please Check your Email to verify you account!",
+                status: 'success',
+                duration: 2500,
+                position: "top"
+            });
             navigate("/loginbyUsername");
-            console.log(data);
         } catch (err) {
-            console.log(err);
+            toast({
+                title: "Register Failed!",
+                description: err.response.data,
+                status: 'error',
+                duration: 2500,
+                position: "top"
+            });
         }
     }
     return (
@@ -77,7 +90,7 @@ export const Signup = () => {
                                     <ErrorMessage
                                         component="box"
                                         name="email"
-                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px", fontSize:"12px" }} />
                                 </VStack>
                             </Flex>
                             <Flex mt={"22px"} justifyContent={"center"}>
@@ -88,7 +101,7 @@ export const Signup = () => {
                                     <ErrorMessage
                                         component="box"
                                         name="username"
-                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px", fontSize: "12px" }} />
                                 </VStack>
                             </Flex>
                             <Flex mt={"20px"} justifyContent={"center"}>
@@ -99,7 +112,7 @@ export const Signup = () => {
                                     <ErrorMessage
                                         component="box"
                                         name="password"
-                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px", fontSize: "11px" }} />
                                 </VStack>
                                 <VStack>
                                     <Field as={Input} name="confirmPassword" ml={"5px"} left={"0px"} borderRadius={"20px"} border={"2px solid"}
@@ -108,7 +121,7 @@ export const Signup = () => {
                                     <ErrorMessage
                                         component="box"
                                         name="confirmPassword"
-                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px", fontSize: "11px" }} />
                                 </VStack>
                             </Flex>
                             <Flex mt={"20px"} justifyContent={"center"}>
@@ -120,7 +133,7 @@ export const Signup = () => {
                                     <ErrorMessage
                                         component="box"
                                         name="phone"
-                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                        style={{ color: "red", marginBottom: "-18px", marginTop: "-8px", fontSize: "12px" }} />
                                 </VStack>
                             </Flex>
                             <Flex mt={"30px"} justifyContent={"center"}>

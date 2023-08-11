@@ -68,7 +68,7 @@ export const LoginbyPhone = () => {
                         <Flex ml={{ base: '33px', md: '30px', lg: '30px' }} mt={"20px"} justifyContent={"center"}>
                             <VStack>
                                 <Field as={Input} name="password" borderRadius={"20px"} border={"2px solid"} justifyContent={"center"} borderColor={"#71B280"} w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
-                                <ErrorMessage component="box" name="password" style={{ color: "red", marginLeft: "30px", marginBottom: "-10px", marginTop: "-8px" }} />
+                                <ErrorMessage component="box" name="password" style={{ color: "red", marginBottom: "-10px", marginTop: "-8px" }} />
                                 <Text as={Link} to="/forgotPassword" ml={"10px"} color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
                             </VStack>
                             <Button onClick={handleClick} right={["5px", "0px"]} variant={"unstyled"} mt={"3px"} size='sm'>
