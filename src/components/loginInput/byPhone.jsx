@@ -71,7 +71,7 @@ export const LoginbyPhone = () => {
                                 <ErrorMessage component="box" name="password" style={{ color: "red", marginBottom: "-10px", marginTop: "-8px" }} />
                                 <Text as={Link} to="/forgotPassword" ml={"10px"} color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
                             </VStack>
-                            <Button onClick={handleClick} right={["5px", "0px"]} variant={"unstyled"} mt={"3px"} size='sm'>
+                            <Button onClick={handleClick} right={["4px", "0px"]} variant={"unstyled"} mt={"3px"} size='sm'>
                                 {show ? <ViewIcon /> : <ViewOffIcon />}
                             </Button>
                         </Flex>
