@@ -20,11 +20,11 @@ export const LoginbyEmail = () => {
             .email("Invalid email addres format")
             .required("Email is required"),
         password: Yup.string()
-        .required("Password is required")
-        .min(6, "Paasowrd min 6 ")
-        .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
-        .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
-        .matches(/.*[0-9].*/, "Password Must Contain 1 number")
+            .required("Password is required")
+            .min(6, "Paasowrd min 6 ")
+            .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
+            .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
+            .matches(/.*[0-9].*/, "Password Must Contain 1 number")
     });
     const handleSubmit = async (data1) => {
         try {
@@ -67,7 +67,7 @@ export const LoginbyEmail = () => {
                             <VStack>
                                 <Field as={Input} name="email" color={"black"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#408E91"}
-                                    w={"400px"} placeholder="Email" size={"md"} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Email" size={"md"} />
                                 <ErrorMessage
                                     component="box"
                                     name="email"
@@ -78,7 +78,7 @@ export const LoginbyEmail = () => {
                             <VStack display={"flex"} justifyContent={"center"}>
                                 <Field as={Input} name="password" left={"15px"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#71B280"}
-                                    w={"400px"} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
                                 <ErrorMessage
                                     component="box"
                                     name="password"

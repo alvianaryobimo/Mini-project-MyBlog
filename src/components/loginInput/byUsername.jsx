@@ -69,7 +69,7 @@ export const LoginbyUsername = () => {
                             <VStack>
                                 <Field as={Input} name="username" color={"black"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#408E91"}
-                                    w={["190px","200px", "230px", "300px", "400px"]} placeholder="Username" size={"md"} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Username" size={"md"} />
                                 <ErrorMessage
                                     component="box"
                                     name="username"
@@ -80,7 +80,7 @@ export const LoginbyUsername = () => {
                             <VStack display={"flex"} justifyContent={"center"}>
                                 <Field as={Input} name="password" left={"15px"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#71B280"}
-                                    w={["190px","200px", "230px", "300px", "400px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
                                 <ErrorMessage
                                     component="box"
                                     name="password"

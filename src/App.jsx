@@ -1,13 +1,13 @@
 import Axios from "axios";
+import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { setValue } from './redux/userSlice';
 import { useDispatch } from "react-redux";
 import { HomePage } from "./pages/home";
-import { Signup } from "./pages/signup";
+import { Signup } from "./pages/register";
 import { ForgotPass } from "./pages/forgot";
 import { ErrorPage } from "./pages/404";
 import { Verify } from "./pages/verify";
-import { useEffect } from "react";
 import { Profile } from "./pages/profile";
 import { AddBlog } from "./pages/addBlog";
 import { DetailPage } from "./pages/detailPage";

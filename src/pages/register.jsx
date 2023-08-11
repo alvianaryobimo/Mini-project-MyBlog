@@ -51,17 +51,17 @@ export const Signup = () => {
             {(props) => {
                 return (
                     <Box as={Form} display={"flex"}
-                        justifyContent={"center"} h={"648px"}
+                        justifyContent={"center"} w={"full"} h={"100vh"}
                         bgGradient="linear(#408E91, #71B280)">
                         <Box rounded='md'
                             boxShadow='0px 0px 10px black'
-                            bg={"white"} mt={"90px"} w={"500px"} h={"500px"}>
+                            bg={"white"} margin={"auto"} w={["250px", "280px", "300px", "400px", "450px", "500px"]} h={"500px"}>
                             <Text display={"flex"} justifyContent={"center"}
                                 mt={"25px"} fontSize={"50px"} color={"#245953"}
                                 fontWeight={"extrabold"} fontFamily={"monospace"} >
                                 Sign Up
                             </Text>
-                            <Flex mt={"5px"} fontSize={"12px"} justifyContent={"center"} >
+                            <Flex mt={"5px"} fontSize={["10px", "12px"]} justifyContent={"center"} >
                                 <Text display={"flex"}>
                                     Already have an account?
                                     <Link to="/login">
@@ -73,7 +73,7 @@ export const Signup = () => {
                                 <VStack>
                                     <Field as={Input} name="email" borderRadius={"20px"}
                                         border={"2px solid"} borderColor={"#71B280"}
-                                        w={"400px"} placeholder="Email" size={"md"} />
+                                        w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Email" size={"md"} />
                                     <ErrorMessage
                                         component="box"
                                         name="email"
@@ -84,7 +84,7 @@ export const Signup = () => {
                                 <VStack>
                                     <Field as={Input} name="username" borderRadius={"20px"} border={"2px solid"}
                                         justifyContent={"center"} borderColor={"#408E91"}
-                                        w={"400px"} placeholder="Username" size={"md"} />
+                                        w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Username" size={"md"} />
                                     <ErrorMessage
                                         component="box"
                                         name="username"
@@ -95,7 +95,7 @@ export const Signup = () => {
                                 <VStack>
                                     <Field as={Input} name="password" mr={"5px"} left={"0px"} borderRadius={"20px"} border={"2px solid"}
                                         justifyContent={"center"} borderColor={"#71B280"}
-                                        w={"195px"} placeholder="Password" size={"md"} />
+                                        w={["91px", "95px", "108px", "145px", "180px"]} placeholder="Password" size={"md"} />
                                     <ErrorMessage
                                         component="box"
                                         name="password"
@@ -104,7 +104,7 @@ export const Signup = () => {
                                 <VStack>
                                     <Field as={Input} name="confirmPassword" ml={"5px"} left={"0px"} borderRadius={"20px"} border={"2px solid"}
                                         justifyContent={"center"} borderColor={"#71B280"}
-                                        w={"195px"} placeholder="Confirm Password" size={"md"} />
+                                        w={["91px", "96px", "108px", "145px", "180px"]} placeholder="Confirm Password" size={"md"} />
                                     <ErrorMessage
                                         component="box"
                                         name="confirmPassword"
@@ -116,7 +116,7 @@ export const Signup = () => {
                                     <Field as={Input} name="phone" type="number" placeholder='Phone Number'
                                         borderRadius={"20px"} border={"2px solid"}
                                         justifyContent={"center"} borderColor={"#408E91"}
-                                        w={"400px"} size={"md"} />
+                                        w={["190px", "200px", "230px", "300px", "370px"]} size={"md"} />
                                     <ErrorMessage
                                         component="box"
                                         name="phone"

@@ -43,7 +43,7 @@ export const LoginbyPhone = () => {
             });
             setTimeout(() => navigate("/"), 1000)
             console.log(data);
-        } catch (err) { 
+        } catch (err) {
             console.log(err.response.data);
             setSuccess(false);
             alert(err.response.data);
@@ -67,7 +67,7 @@ export const LoginbyPhone = () => {
                             <VStack>
                                 <Field as={Input} name="phone" type="number" color={"black"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#408E91"}
-                                    w={"400px"} placeholder="Phone Number" size={"md"} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Phone Number" size={"md"} />
                                 <ErrorMessage
                                     component="box"
                                     name="phone"
@@ -78,7 +78,7 @@ export const LoginbyPhone = () => {
                             <VStack display={"flex"} justifyContent={"center"}>
                                 <Field as={Input} name="password" left={"15px"} borderRadius={"20px"} border={"2px solid"}
                                     justifyContent={"center"} borderColor={"#71B280"}
-                                    w={"400px"} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
+                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
                                 <ErrorMessage
                                     component="box"
                                     name="password"
