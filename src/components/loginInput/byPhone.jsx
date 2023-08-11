@@ -1,35 +1,33 @@
 import Axios from "axios";
 import * as Yup from "yup";
-import { setValue } from "../../redux/userSlice";
 import { useState } from "react";
+import { setValue } from "../../redux/userSlice";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Field, ErrorMessage, Formik, Form } from "formik";
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Box, Button, Flex, Input, Text, VStack, useToast } from "@chakra-ui/react";
 
 export const LoginbyPhone = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const handleClick = () => setShow(!show);
     const toast = useToast();
     const [show, setShow] = useState(false);
-    const handleClick = () => setShow(!show);
     const [success, setSuccess] = useState();
-    const navigate = useNavigate();
-    const dispatch = useDispatch()
     const loginSchema = Yup.object().shape({
         phone: Yup.string()
             .required("Phone is required"),
         password: Yup.string()
             .required("Password is required")
-            .min(6, "Paasowrd min 6 ")
+            .min(6, "Password min 6 ")
             .matches(/^(?=.*[A-Z])/, "Password Must Contain 1 Capital")
             .matches(/^(?=.*(\W|_))/, "Password Must Contain 1 Symbol")
             .matches(/.*[0-9].*/, "Password Must Contain 1 number")
     });
-
     const handleSubmit = async (data) => {
         try {
             const response = await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/auth/login", data);
-            console.log(response.data.isAccountExist);
             dispatch(setValue(response.data.isAccountExist));
             localStorage.setItem("token", response.data.token);
             setSuccess(true);
@@ -38,26 +36,24 @@ export const LoginbyPhone = () => {
                 description: "Login Succses!",
                 status: 'success',
                 duration: 2500,
-                isClosable: true,
                 position: "top"
             });
-            setTimeout(() => navigate("/"), 1000)
-            console.log(data);
+            navigate("/")
         } catch (err) {
-            console.log(err.response.data);
-            setSuccess(false);
-            alert(err.response.data);
+            toast({
+                title: "Accsess Denied!",
+                description: err.response.data.err,
+                status: 'error',
+                duration: 2500,
+                position: "top"
+            });
         }
     }
     return (
-        <Formik
-            initialValues={{ phone: "", password: "" }}
-            validationSchema={loginSchema}
+        <Formik initialValues={{ phone: "", password: "" }} validationSchema={loginSchema}
             onSubmit={(value, action) => {
                 handleSubmit(value);
-                if (success) {
-                    action.resetForm();
-                }
+                if (success) action.resetForm();
             }}>
             {(props) => {
                 return (
@@ -65,28 +61,17 @@ export const LoginbyPhone = () => {
 
                         <Flex justifyContent={"center"}>
                             <VStack>
-                                <Field as={Input} name="phone" type="number" color={"black"} borderRadius={"20px"} border={"2px solid"}
-                                    justifyContent={"center"} borderColor={"#408E91"}
-                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Phone Number" size={"md"} />
-                                <ErrorMessage
-                                    component="box"
-                                    name="phone"
-                                    style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
+                                <Field as={Input} name="phone" type="number" color={"black"} borderRadius={"20px"} border={"2px solid"} justifyContent={"center"} borderColor={"#408E91"} w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Phone Number" size={"md"} />
+                                <ErrorMessage component="box" name="phone" style={{ color: "red", marginBottom: "-18px", marginTop: "-8px" }} />
                             </VStack>
                         </Flex>
-                        <Flex mt={"20px"} justifyContent={"center"}>
-                            <VStack display={"flex"} justifyContent={"center"}>
-                                <Field as={Input} name="password" left={"15px"} borderRadius={"20px"} border={"2px solid"}
-                                    justifyContent={"center"} borderColor={"#71B280"}
-                                    w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
-                                <ErrorMessage
-                                    component="box"
-                                    name="password"
-                                    style={{ color: "red", marginLeft: "30px", marginBottom: "-10px", marginTop: "-8px" }} />
-                                <Text as={Link} to="/forgotPassword" ml={"25px"}
-                                    color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
+                        <Flex ml={{ base: '33px', md: '30px', lg: '30px' }} mt={"20px"} justifyContent={"center"}>
+                            <VStack>
+                                <Field as={Input} name="password" borderRadius={"20px"} border={"2px solid"} justifyContent={"center"} borderColor={"#71B280"} w={["190px", "200px", "230px", "300px", "370px"]} placeholder="Password" size={"md"} type={show ? 'text' : 'password'} />
+                                <ErrorMessage component="box" name="password" style={{ color: "red", marginLeft: "30px", marginBottom: "-10px", marginTop: "-8px" }} />
+                                <Text as={Link} to="/forgotPassword" ml={"10px"} color={"blue.400"} _hover={{ color: "blue.600" }} fontSize={"10px"} fontStyle={"inherit"}> Forgot Password?</Text>
                             </VStack>
-                            <Button onClick={handleClick} right={"25px"} variant={"unstyled"} mt={"3px"} size='sm'>
+                            <Button onClick={handleClick} right={"0px"} variant={"unstyled"} mt={"3px"} size='sm'>
                                 {show ? <ViewIcon /> : <ViewOffIcon />}
                             </Button>
                         </Flex>
