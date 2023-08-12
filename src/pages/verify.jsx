@@ -9,24 +9,20 @@ export const Verify = () => {
     const header = {
         Authorization: `Bearer ${token}`
     }
-    console.log(token);
     const getVerified = async () => {
         try {
-            const response = await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {
+            await Axios.patch("https://minpro-blog.purwadhikabootcamp.com/api/auth/verify", {
             }, { headers: header });
-            navigate("/loginbyUsername");
+            navigate("/login");
         } catch (err) {
             console.log(err);
         }
     }
     return (
         <Formik>
-            <Box display={"flex"}
-                justifyContent={"center"} h={"648"}
-                bgGradient="linear(#408E91, #71B280)">
-                <Box rounded='md'
-                    boxShadow='0px 0px 10px black'
-                    bg={"white"} mt={"130px"} w={"500px"} h={"380px"}>
+            <Box display={"flex"} justifyContent={"center"} h={"100vh"} bgGradient="linear(#408E91, #71B280)">
+                <Box rounded='md' boxShadow='0px 0px 10px black'
+                    bg={"white"} margin={"auto"} w={"500px"} h={"380px"}>
                     <Text mt={"120px"} display={"flex"} justifyContent={"center"}
                         fontSize={"40px"} color={"#245953"}
                         fontWeight={"extrabold"} fontFamily={"monospace"} >
