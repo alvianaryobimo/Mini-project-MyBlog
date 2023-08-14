@@ -42,7 +42,7 @@ export const Home = () => {
                     borderRadius={"10px"}
                     boxShadow='0px 0px 6px black'
                     w={["full", "850px"]} h={["200px", "504px"]}> <Carousel /></Flex>
-                <Flex
+                <Flex justifyContent={"center"}
                     bg={"white"}
                     border={"1px solid gray"} ml={["0p", "20px"]}
                     borderRadius={"10px"}
