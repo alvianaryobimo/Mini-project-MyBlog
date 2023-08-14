@@ -3,6 +3,7 @@ import { Navbar } from "../components/navbar";
 import { EmailEdit } from "../components/profile/emaiEdit";
 import { PhoneEdit } from "../components/profile/phoneEdit";
 import { PasswordEdit } from "../components/profile/passEdit";
+import { useEffect } from "react";
 import { Box, Flex, Button, Text, Heading } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -11,6 +12,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-u
 
 export const Profile = () => {
     const data = useSelector((state) => state.user.value);
+    const token = localStorage.getItem("token");
     const navigate = useNavigate();
     const onLogout = () => {
         localStorage.removeItem("token")
@@ -18,14 +20,17 @@ export const Profile = () => {
             navigate("/");
         }, 1000);
     }
+    useEffect(() => {
+        if (!token) navigate("/login")
+    }, []);
     return (
         <>
             <Box >
                 <Navbar />
                 <Flex justifyContent={"center"}>
-                    <Flex mt={"135px"} borderRadius={"10px"}
+                    <Flex justifyContent={"center"} direction={{ base: "column", md: "row" }} mt={"135px"} borderRadius={"10px"}
                         boxShadow='0px 0px 6px black' bgGradient="linear(#408E91, #71B280)" w={"800px"} h={"450px"}>
-                        <Box ml={"37px"} mt={"48px"} borderRadius={"10px"}
+                        <Box mt={"48px"} borderRadius={"10px"}
                             boxShadow='0px 0px 6px black' bg={"white"} w={"300px"} h={"350px"}>
                             <Flex justifyContent={"center"} >
                                 <Box mt={"35px"} boxShadow={"0px 0px 4px black"} borderRadius={"50%"} bg={"grey"} w={"150px"} h={"150px"}>
@@ -85,7 +90,7 @@ export const Profile = () => {
                                 </Button>
                             </Flex>
                         </Box>
-                        <Box mt={"45px"} ml={"40px"} borderRadius={"6px"} bgColor={"white"} w={"380px"} h={"353px"}>
+                        <Box mt={"45px"} ml={["0px", "40px"]} borderRadius={"6px"} bgColor={"white"} w={"380px"} h={"353px"}>
                             <Tabs align='center' isFitted variant='enclosed' colorScheme="green">
                                 <TabList borderTop={"20px"} >
                                     <Tab >Username</Tab>

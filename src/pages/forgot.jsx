@@ -37,7 +37,7 @@ export const ForgotPass = () => {
                 boxShadow='0px 0px 10px black'
                 bg={"white"} pt={"30px"} w={["250px", "350px", "400px", "450px", "500px"]} h={"380px"}>
                 <Text display={"flex"} justifyContent={"center"}
-                    pt={"50px"} fontSize={["20px", "25px", "30px", "35px"]} color={"#245953"}
+                    pt={"50px"} fontSize={["17px", "20px", "25px", "30px", "35px"]} color={"#245953"}
                     fontWeight={"extrabold"} fontFamily={"monospace"} >
                     Forgot Your Password?
                 </Text>

@@ -16,7 +16,6 @@ export const Myblog = () => {
                 },
             });
             setBlog(response.data.result)
-            console.log(response.data.result);
         } catch (err) {
             console.log(err.response.data);
         }
@@ -27,6 +26,7 @@ export const Myblog = () => {
     }
     useEffect(() => {
         getMyBlog();
+        if (!token) navigate("/login")
     }, []);
     return (
         <>
@@ -34,7 +34,7 @@ export const Myblog = () => {
                 <Navbar />
             </Flex>
             <Flex mt={"80px"} justifyContent={"center"}>
-            
+
                 <Heading color={"#408E91"} fontSize={"50px"} fontFamily={"monospace"} >
                     My Blog
                 </Heading>
@@ -50,7 +50,7 @@ export const Myblog = () => {
                 {blog?.map((item, index) => {
                     return (
                         <>
-                           
+
                             <Box mb={"20px"} onClick={() => handleClick(item.id)} key={index} bgGradient="linear(#71B280, #408E91)"
                                 border={"2px solid"}
                                 mt={"20px"}

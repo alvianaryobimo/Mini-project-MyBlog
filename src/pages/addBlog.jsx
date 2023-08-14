@@ -1,5 +1,5 @@
 import Axios from "axios";
-import * as Yup from "yup"; 
+import * as Yup from "yup";
 import { Navbar } from "../components/navbar";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useEffect, useState } from "react";
@@ -48,11 +48,11 @@ export const AddBlog = () => {
     const handleCreate = async (value) => {
         try {
             const data = new FormData();
+            const token = localStorage.getItem("token");
             const { title, keywords, country, CategoryId, url, content } = value;
             data.append("data", JSON.stringify({ title, keywords, country, CategoryId, url, content, file }));
             data.append("file", file);
-            // console.log(data);
-            const response = await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/blog", data, {
+            await Axios.post("https://minpro-blog.purwadhikabootcamp.com/api/blog", data, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
@@ -65,15 +65,15 @@ export const AddBlog = () => {
                 duration: 1500,
                 isClosable: true,
                 position: "top"
-              })
+            })
             navigate("/myBlog");
-            console.log(response);
         } catch (err) {
             console.log(err);
         }
     }
     useEffect(() => {
         getCategory();
+        if (!token) navigate("/login")
     }, []);
     return (
         <Formik
@@ -166,7 +166,7 @@ export const AddBlog = () => {
                                 </VStack>
                             </Box>
                             <VStack justifyContent={"center"}>
-                                <Field as={ Textarea} name="content" ml={"15px"} placeholder="Content" border={"2px solid"} borderColor={"#408E91"} h={"331px"} w={"600px"} mt={"35px"}></Field> <br />
+                                <Field as={Textarea} name="content" ml={"15px"} placeholder="Content" border={"2px solid"} borderColor={"#408E91"} h={"331px"} w={"600px"} mt={"35px"}></Field> <br />
                                 <ErrorMessage
                                     component="Box"
                                     name="content"
