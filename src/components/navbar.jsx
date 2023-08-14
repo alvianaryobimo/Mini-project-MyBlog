@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
-import { SearchIcon } from '@chakra-ui/icons';
-import { Button, Flex, Heading, Text, Avatar } from '@chakra-ui/react';
+import { Link, useNavigate } from "react-router-dom";
+import { HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
+import { Button, Flex, Heading, Text, Avatar, IconButton, useToast, Box, Divider } from '@chakra-ui/react';
+import { Menu, MenuButton, MenuList, MenuItem, } from '@chakra-ui/react'
+import { AiOutlineHome } from 'react-icons/ai';
+import { useSelector } from "react-redux";
 
 export const Navbar = () => {
+    const data = useSelector((state) => state.user.value);
     const token = localStorage.getItem("token");
+    const navigate = useNavigate();
+    const toast = useToast();
+    const onLogout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+        toast({
+            title: "Logged Out!",
+            description: "See you again!",
+            status: 'error',
+            duration: 2500,
+            position: "top"
+        });
+    }
     return (
         <Flex
             zIndex={"999"}
@@ -21,22 +38,41 @@ export const Navbar = () => {
             </Link>
             <Flex mr={"10px"} fontFamily={"mono"} color={"white"}>
 
-                <Text mr={"20px"} mt={"24px"}>
-                    <Link to="/" >Home</Link>
+                <Text mr={"18px"} my={"auto"}>
+                    <Link to="/" ><AiOutlineHome size={19} /></Link>
                 </Text>
-                <Text mr={"20px"} mt={"24px"}>
-                    <Link to="/search"><SearchIcon></SearchIcon></Link>
+                <Text mr={"20px"} my={"auto"}>
+                    <Link to="/search"><SearchIcon /></Link>
                 </Text>
                 {token ?
                     (
                         <>
-                            <Text mr={"20px"} mt={"24px"}>
-                                <Link to="/myBlog">MyBlog</Link>
-                            </Text>
                             <Link to="/profile">
                                 <Avatar mr={"7px"} mt={"11px"} />
-                                {/* <Text fontWeight={"extrabold"} ml={"7px"} mt={"15px"} color={"white"}> {data.username} </Text> */}
                             </Link>
+                            <Menu>
+                                <MenuButton
+                                    as={IconButton}
+                                    aria-label='Options'
+                                    icon={<HamburgerIcon />}
+                                    variant={"unstyled"}
+                                    color="white"
+                                    margin={"auto"}
+                                />
+                                <MenuList borderColor={"white"} bgColor="#71B280">
+                                    <MenuItem bgColor="#71B280" color="white" cursor="pointer">
+                                        <Box>
+                                            <Text fontWeight={"bold"}>{data.username}</Text>
+                                            <Text fontWeight={"bold"} fontSize={"10px"}>{data.email}</Text>
+                                        </Box>
+                                    </MenuItem>
+                                    <Divider color="white" />
+                                    <MenuItem as={Link} to={"/profile"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer">Profile & Settings</MenuItem>
+                                    <MenuItem as={Link} to={"/myblog"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer">MyBlog</MenuItem>
+                                    <MenuItem _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer" >MyLiked</MenuItem>
+                                    <MenuItem onClick={onLogout} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="red" cursor="pointer" >Log Out</MenuItem>
+                                </MenuList>
+                            </Menu>
                         </>
                     ) : (
                         <>
@@ -55,7 +91,6 @@ export const Navbar = () => {
                         </>
                     )}
             </Flex>
-
-        </Flex>
+        </Flex >
     );
 }

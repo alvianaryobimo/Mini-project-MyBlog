@@ -34,14 +34,14 @@ export const Home = () => {
         getPagination(page);
     }, []);
     return (
-        <Box bg={"white"} pt={"90px"}>
-            <Flex ml={"48px"}>
+        <Box bg={"white"} pt={"95px"}>
+            <Flex direction={{ base: "column", md: "row" }} justifyContent={"center"}>
                 <Flex
                     bg={"gray"}
                     border={"1px solid gray"}
                     borderRadius={"10px"}
                     boxShadow='0px 0px 6px black'
-                    w={"850px"} h={"504px"}> <Carousel /></Flex>
+                    w={["full", "850px"]} h={["200px", "504px"]}> <Carousel /></Flex>
                 <Flex
                     bg={"white"}
                     border={"1px solid gray"} ml={"20px"}
@@ -55,18 +55,18 @@ export const Home = () => {
                     boxShadow='0px 0px 6px black'
                     borderRadius={"10px"}
                     w={"1170px"} bg={"gray.200"}
-                    pt={"10px"} mt={"22px"} mr={"3px"}
+                    pt={"10px"} mt={"22px"}
                     justifyContent={"center"}>
                     {data?.map((item, index) => {
                         return (
                             <>
                                 <Box key={index} onClick={() => handleClick(item.id)}
-                                    mb={"10px"} bg={"white"}
-                                    mt={"8px"} border={"3px solid #408E91"}
-                                    ml={"8px"} mr={"10px"}
+                                    bg={"white"}
+                                    w={"250px"} h={"220px"}
+                                    my={"10px"} mx={"10px"}
+                                    border={"3px solid #408E91"}
                                     borderRadius={"5px"}
-                                    boxShadow='0px 0px 2px '
-                                    w={"250px"} h={"220px"}>
+                                    boxShadow='0px 0px 2px'>
                                     <Flex justifyContent={"center"} bg={"white"}
                                         border={"3px solid #408E91"}
                                         borderRadius={"10px"} mt={"16px"} ml={"22px"}
