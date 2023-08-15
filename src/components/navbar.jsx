@@ -32,22 +32,22 @@ export const Navbar = () => {
             justifyContent={"space-between"}
             boxShadow={"0px 0px 10px black"}>
             <Link to="/">
-                <Heading cursor={"pointer"} fontFamily={"monospace"} color={"white"} lineHeight={"70px"} ml={"15px"}>
+                <Heading fontSize={["25px", "32px"]} cursor={"pointer"} fontFamily={"monospace"} color={"white"} lineHeight={"70px"} ml={"15px"}>
                     MyBlog
                 </Heading>
             </Link>
             <Flex mr={"10px"} fontFamily={"mono"} color={"white"}>
 
-                <Text mr={"18px"} my={"auto"}>
+                <Text mr={["8px", "10px", "18px"]} my={"auto"}>
                     <Link to="/" ><AiOutlineHome size={19} /></Link>
                 </Text>
-                <Text mr={"20px"} my={"auto"}>
+                <Text mr={["8px", "10px", "20px"]} my={"auto"}>
                     <Link to="/search"><SearchIcon /></Link>
                 </Text>
                 {token ?
                     (
                         <>
-                            <Avatar mr={"7px"} mt={"11px"} />
+                            <Avatar size={["sm", "md"]} mr={["2px", "7px", "7px"]} mt={["20px", "11px"]} />
                             <Menu>
                                 <MenuButton
                                     as={IconButton}
