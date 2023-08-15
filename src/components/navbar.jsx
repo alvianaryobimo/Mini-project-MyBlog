@@ -38,10 +38,10 @@ export const Navbar = () => {
             </Link>
             <Flex mr={"10px"} fontFamily={"mono"} color={"white"}>
 
-                <Text mr={["8px", "10px", "18px"]} my={"auto"}>
+                <Text mr={[ "17px", "18px"]} my={"auto"}>
                     <Link to="/" ><AiOutlineHome size={19} /></Link>
                 </Text>
-                <Text mr={["8px", "10px", "20px"]} my={"auto"}>
+                <Text mr={[ "18px", "20px"]} my={"auto"}>
                     <Link to="/search"><SearchIcon /></Link>
                 </Text>
                 {token ?

@@ -20,7 +20,7 @@ export const Footer = () => {
                         placeat reprehenderit, illo animi <br />
                     </Text>
                     <Input borderRadius={"20px"} border={"2px solid"}
-                        borderColor={"white"} w={["100px", "200px", "300px"]} mt={"15px"}
+                        borderColor={"white"} w={["110px", "200px", "300px"]} mt={"15px"}
                         placeholder="Your Email Addres" size={"md"} /> <br />
                     <Button
                         ml={"1px"}
