@@ -34,28 +34,30 @@ export const Home = () => {
         getPagination(page);
     }, []);
     return (
-        <Box bg={"white"} pt={"95px"}>
-            <Flex justifyContent={"center"} direction={["column", "row", "row"]} >
-                <Flex
-                    justifyContent={"center"}
-                    bg={"gray"}
-                    border={"1px solid gray"}
-                    borderRadius={"10px"}
-                    boxShadow='0px 0px 6px black'
-                    w={["full", "full", "850px"]} h={["250px", "300px", "504px"]}> <Carousel /></Flex>
-                <Flex justifyContent={"center"}
-                    bg={"white"} mt={["20px", "0px"]}
-                    border={"1px solid gray"} ml={["0p", "20px"]}
-                    borderRadius={"10px"}
-                    boxShadow='0px 0px 6px black'
-                    w={["full", "300px"]} h={"504px"}><TabsBox /></Flex>
-            </Flex>
+        <>
+            <Box bg={"white"} pt={"95px"}>
+                <Flex justifyContent={"center"} direction={["column", "row", "row"]} >
+                    <Flex
+                        justifyContent={"center"}
+                        bg={"gray"}
+                        border={"1px solid gray"}
+                        borderRadius={"10px"}
+                        boxShadow='0px 0px 6px black'
+                        w={["full", "full", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
+                    <Flex justifyContent={"center"}
+                        bg={"white"} mt={["20px", "0px"]}
+                        border={"1px solid gray"} ml={["0p", "20px"]}
+                        borderRadius={"10px"}
+                        boxShadow='0px 0px 6px black'
+                        w={["full", "300px"]} h={"504px"}><TabsBox /></Flex>
+                </Flex>
+            </Box>
 
-            <Flex justifyContent={"center"} mb={"30px"}>
+            <Flex justifyContent={"center"}>
                 <Flex flexWrap={"wrap"} pb={"10px"}
                     boxShadow='0px 0px 6px black'
                     borderRadius={"10px"}
-                    w={"1170px"} bg={"gray.200"}
+                    w={["full", "1170px"]} bg={"gray.200"}
                     pt={"10px"} mt={"22px"}
                     justifyContent={"center"}>
                     {data?.map((item, index) => {
@@ -63,7 +65,7 @@ export const Home = () => {
                             <>
                                 <Box key={index} onClick={() => handleClick(item.id)}
                                     bg={"white"}
-                                    w={["180px", "250px"]} h={"220px"}
+                                    w={["170px", "250px"]} h={"220px"}
                                     my={"10px"} mx={"10px"}
                                     border={"3px solid #408E91"}
                                     borderRadius={"5px"}
@@ -91,9 +93,9 @@ export const Home = () => {
                                                 overflow="hidden"
                                                 whiteSpace="nowrap"
                                                 textOverflow="ellipsis"
-                                                maxWidth={["100px","165px"]}
+                                                maxWidth={["90px", "165px"]}
                                                 ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}
-                                                >
+                                            >
                                                 by {item.User.username}
                                             </Text>
                                             <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>
@@ -106,14 +108,14 @@ export const Home = () => {
                             </>
                         );
                     })}
-                    <Flex justifyContent={"center"} mt="5px">
+                </Flex>
+
+            </Flex>
+                    <Flex justifyContent={"center"} my="20px">
                         <Button bgColor="#408E91" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
                         <Button mx="5px" disabled bgColor="#408E91" color="white">{page}</Button>
                         <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#408E91" color="white"><ArrowForwardIcon /></Button>
                     </Flex>
-                </Flex>
-
-            </Flex>
-        </Box>
+        </>
     );
 }

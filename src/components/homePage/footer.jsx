@@ -13,14 +13,14 @@ export const Footer = () => {
                     <Text fontSize={"20px"} fontFamily={"monospace"} fontWeight={"extrabold"} >
                         News Letter
                     </Text>
-                    <Text mt={"8px"}>
+                    <Text fontSize={["10px","15px"]} mt={"8px"}>
                         Lorem ipsum dolor sit amet <br />
                         consectetur adipisicing elit. Nulla <br />
                         praesentium exercitationem magni <br />
                         placeat reprehenderit, illo animi <br />
                     </Text>
                     <Input borderRadius={"20px"} border={"2px solid"}
-                        borderColor={"white"} w={"300px"} mt={"15px"}
+                        borderColor={"white"} w={["100px","200px","300px"]} mt={"15px"}
                         placeholder="Your Email Addres" size={"md"} /> <br />
                     <Button
                         ml={"1px"}
@@ -35,9 +35,9 @@ export const Footer = () => {
                     </Button>
                 </Box>
             </Box>
-            <Text mr={"20px"} fontSize={"20px"} fontFamily={"monospace"} fontWeight={"extrabold"} >
+            <Text mr={"10px"} fontSize={"20px"} fontFamily={"monospace"} fontWeight={"extrabold"} >
                 Follow & Contact Us
-                <Flex mt={"20px"} justifyContent={"center"}>
+                <Flex mt={"20px"} justifyContent={"end"}>
                     <Flex mr={"10px"}>
                         <a href="https://www.linkedin.com">
                             <SiLinkedin />

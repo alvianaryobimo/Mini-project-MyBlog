@@ -32,7 +32,7 @@ export const Navbar = () => {
             justifyContent={"space-between"}
             boxShadow={"0px 0px 10px black"}>
             <Link to="/">
-                <Heading cursor={"pointer"} fontFamily={"monospace"} color={"white"} mt={"12px"} ml={"15px"}>
+                <Heading cursor={"pointer"} fontFamily={"monospace"} color={"white"} lineHeight={"70px"} ml={"15px"}>
                     MyBlog
                 </Heading>
             </Link>
@@ -47,9 +47,7 @@ export const Navbar = () => {
                 {token ?
                     (
                         <>
-                            <Link to="/profile">
-                                <Avatar mr={"7px"} mt={"11px"} />
-                            </Link>
+                            <Avatar mr={"7px"} mt={"11px"} />
                             <Menu>
                                 <MenuButton
                                     as={IconButton}
