@@ -44,7 +44,7 @@ export default function Carousel() {
               <Heading
                 cursor={"pointer"}
                 display={"flex"} justifyContent={"center"}
-                lineHeight={"500px"} fontSize={"35px"}
+                lineHeight={["250px", "300px", "504px"]} fontSize={"35px"}
                 fontFamily={"monospace"} color={"white"} >
                 {item.title}</Heading>
             </Box>
