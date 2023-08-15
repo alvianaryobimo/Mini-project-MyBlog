@@ -36,20 +36,20 @@ export const Home = () => {
     return (
         <>
             <Box bg={"white"} pt={"95px"}>
-                <Flex justifyContent={"center"} direction={["column", "row", "row"]} >
+                <Flex justifyContent={"center"} direction={["column", "column", "row"]} >
                     <Flex
                         justifyContent={"center"}
                         bg={"gray"}
                         border={"1px solid gray"}
                         borderRadius={"10px"}
                         boxShadow='0px 0px 6px black'
-                        w={["full", "full", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
+                        w={["full", "full", "700px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
                     <Flex justifyContent={"center"}
                         bg={"white"} mt={["20px", "0px"]}
                         border={"1px solid gray"} ml={["0p", "20px"]}
                         borderRadius={"10px"}
                         boxShadow='0px 0px 6px black'
-                        w={["full", "300px"]} h={"504px"}><TabsBox /></Flex>
+                        w={["full", "300px", "300px", "300px"]} h={"504px"}><TabsBox /></Flex>
                 </Flex>
             </Box>
 
@@ -65,7 +65,7 @@ export const Home = () => {
                                 <>
                                     <Box key={index} onClick={() => handleClick(item.id)}
                                         bg={"white"}
-                                        w={["170px", "250px"]} h={"220px"}
+                                        w={["150px", "170px", "250px"]} h={["200px", "220px"]}
                                         my={"10px"} mx={"10px"}
                                         border={"3px solid #408E91"}
                                         borderRadius={"5px"}
@@ -74,7 +74,7 @@ export const Home = () => {
                                             <Flex justifyContent={"center"} bg={"white"}
                                                 border={"3px solid #408E91"}
                                                 borderRadius={"10px"} mt={"16px"}
-                                                w={["150px", "200px"]} h={"100px"} >
+                                                w={["120px", "150px", "200px"]} h={["80px", "100px"]} >
                                                 <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
                                             </Flex>
                                         </Flex>
@@ -82,18 +82,18 @@ export const Home = () => {
                                             overflow="hidden"
                                             whiteSpace="nowrap"
                                             textOverflow="ellipsis"
-                                            maxWidth="190px"
-                                            ml={["12px", "28px"]} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
+                                            maxWidth={["130px", "195px"]}
+                                            ml={["12px", "15px", "28px"]} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
                                             {item.title}
                                         </Text>
-                                        <Flex mt={"6px"} ml={["10px", "20px"]}>
-                                            <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={"md"} mt={'0px'} />
+                                        <Flex mt={["12px", "6px"]} ml={["10px", "10px", "20px"]} >
+                                            <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={["sm", "md"]} mt={["8px", '0px']} />
                                             <Box mt={"3px"}>
                                                 <Text
                                                     overflow="hidden"
                                                     whiteSpace="nowrap"
                                                     textOverflow="ellipsis"
-                                                    maxWidth={["90px", "165px"]}
+                                                    maxWidth={["80px", "100px", "165px"]}
                                                     ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}
                                                 >
                                                     by {item.User.username}
