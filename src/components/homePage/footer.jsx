@@ -13,7 +13,7 @@ export const Footer = () => {
                     <Text fontSize={["16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"} >
                         News Letter
                     </Text>
-                    <Text fontSize={["10px", "15px"]} mt={"8px"}>
+                    <Text fontSize={["8px","10px", "15px"]} mt={"8px"}>
                         Lorem ipsum dolor sit amet <br />
                         consectetur adipisicing elit. Nulla <br />
                         praesentium exercitationem magni <br />
@@ -35,7 +35,7 @@ export const Footer = () => {
                     </Button>
                 </Box>
             </Box>
-            <Text mt={"30px"} mr={"10px"} fontSize={["16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"} >
+            <Text mt={["40px","30px","20px"]} mr={"10px"} fontSize={["12px","16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"} >
                 Follow & Contact Us
                 <Flex mt={"20px"} justifyContent={"end"}>
                     <Flex mr={"10px"}>
