@@ -53,69 +53,69 @@ export const Home = () => {
                 </Flex>
             </Box>
 
-            <Flex justifyContent={"center"}>
-                <Flex flexWrap={"wrap"} pb={"10px"}
-                    boxShadow='0px 0px 6px black'
+            <Flex justifyContent={"center"} mb={"30px"}>
+                <Box boxShadow='0px 0px 6px black'
                     borderRadius={"10px"}
                     w={["full", "1170px"]} bg={"gray.200"}
-                    pt={"10px"} mt={"22px"}
-                    justifyContent={"center"}>
-                    {data?.map((item, index) => {
-                        return (
-                            <>
-                                <Box key={index} onClick={() => handleClick(item.id)}
-                                    bg={"white"}
-                                    w={["170px", "250px"]} h={"220px"}
-                                    my={"10px"} mx={"10px"}
-                                    border={"3px solid #408E91"}
-                                    borderRadius={"5px"}
-                                    boxShadow='0px 0px 2px'>
-                                    <Flex justifyContent={"center"}>
-                                        <Flex justifyContent={"center"} bg={"white"}
-                                            border={"3px solid #408E91"}
-                                            borderRadius={"10px"} mt={"16px"}
-                                            w={["150px", "200px"]} h={"100px"} >
-                                            <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+                    pt={"10px"} mt={"22px"}>
+                    <Flex flexWrap={"wrap"} pb={"10px"}
+                        justifyContent={"center"}>
+                        {data?.map((item, index) => {
+                            return (
+                                <>
+                                    <Box key={index} onClick={() => handleClick(item.id)}
+                                        bg={"white"}
+                                        w={["170px", "250px"]} h={"220px"}
+                                        my={"10px"} mx={"10px"}
+                                        border={"3px solid #408E91"}
+                                        borderRadius={"5px"}
+                                        boxShadow='0px 0px 2px'>
+                                        <Flex justifyContent={"center"}>
+                                            <Flex justifyContent={"center"} bg={"white"}
+                                                border={"3px solid #408E91"}
+                                                borderRadius={"10px"} mt={"16px"}
+                                                w={["150px", "200px"]} h={"100px"} >
+                                                <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+                                            </Flex>
                                         </Flex>
-                                    </Flex>
-                                    <Text mt={"3px"}
-                                        overflow="hidden"
-                                        whiteSpace="nowrap"
-                                        textOverflow="ellipsis"
-                                        maxWidth="190px"
-                                        ml={["12px", "28px"]} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
-                                        {item.title}
-                                    </Text>
-                                    <Flex mt={"6px"} ml={["10px", "20px"]}>
-                                        <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={"md"} mt={'0px'} />
-                                        <Box mt={"3px"}>
-                                            <Text
-                                                overflow="hidden"
-                                                whiteSpace="nowrap"
-                                                textOverflow="ellipsis"
-                                                maxWidth={["90px", "165px"]}
-                                                ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}
-                                            >
-                                                by {item.User.username}
-                                            </Text>
-                                            <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>
-                                                {item.Category.name}
-                                            </Text>
-                                        </Box>
+                                        <Text mt={"3px"}
+                                            overflow="hidden"
+                                            whiteSpace="nowrap"
+                                            textOverflow="ellipsis"
+                                            maxWidth="190px"
+                                            ml={["12px", "28px"]} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
+                                            {item.title}
+                                        </Text>
+                                        <Flex mt={"6px"} ml={["10px", "20px"]}>
+                                            <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={"md"} mt={'0px'} />
+                                            <Box mt={"3px"}>
+                                                <Text
+                                                    overflow="hidden"
+                                                    whiteSpace="nowrap"
+                                                    textOverflow="ellipsis"
+                                                    maxWidth={["90px", "165px"]}
+                                                    ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}
+                                                >
+                                                    by {item.User.username}
+                                                </Text>
+                                                <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>
+                                                    {item.Category.name}
+                                                </Text>
+                                            </Box>
 
-                                    </Flex>
-                                </Box>
-                            </>
-                        );
-                    })}
-                </Flex>
-
-            </Flex>
-                    <Flex justifyContent={"center"} my="20px">
+                                        </Flex>
+                                    </Box>
+                                </>
+                            );
+                        })}
+                    </Flex>
+                    <Flex justifyContent={"center"} my="10px">
                         <Button bgColor="#408E91" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
                         <Button mx="5px" disabled bgColor="#408E91" color="white">{page}</Button>
                         <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#408E91" color="white"><ArrowForwardIcon /></Button>
                     </Flex>
+                </Box>
+            </Flex>
         </>
     );
 }
