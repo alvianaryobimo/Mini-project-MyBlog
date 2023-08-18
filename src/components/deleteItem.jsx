@@ -3,7 +3,6 @@ import { DeleteIcon } from "@chakra-ui/icons"
 import { Box, Button, useToast } from "@chakra-ui/react"
 import { useNavigate, useParams } from "react-router-dom"
 
-
 export const DeleteButton = () => {
     const navigate = useNavigate()
     const { id } = useParams()

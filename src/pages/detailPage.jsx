@@ -7,7 +7,6 @@ import { CheckCircleIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
-
 export const DetailPage = () => {
     const params = useParams();
     const [data, setData] = useState();
@@ -67,7 +66,7 @@ export const DetailPage = () => {
                     </Flex>
                 </Box>
             </Flex>
-            <Flex  mt={"30px"}>
+            <Flex mt={"30px"}>
                 <DeleteButton />
                 <Button color={"white"} bg={"teal"} mt={"12px"} mr={"10px"} size={"xs"}>
                     <CheckCircleIcon /> ‎ Like this article
