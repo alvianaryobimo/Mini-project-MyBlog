@@ -30,7 +30,7 @@ export const DetailPage = () => {
                         <Flex textAlign={"center"} justifyContent={"center"} mt={"100px"} rounded='md'
                             boxShadow='0px 0px 5px black' h={["70px", "100px", "100px", "100px", "100px", "100px"]}
                             bgGradient="linear(#408E91, #71B280)" w={["220px", "300px", "400px", "500px", "600px", "800px"]} >
-                            <Heading display={"flex"} justifyContent={"center"} fontFamily={"monospace"} fontSize={["23px", "30px", "35px", "35px", "35px"]} color={"white"} lineHeight={["70px", "100px", "100px", "100px", "100px", "100px"]}>MyBlog | {data?.Category.name}</Heading> <br />
+                            <Heading display={"flex"} justifyContent={"center"} fontFamily={"monospace"} fontSize={["22px", "30px", "35px", "35px", "35px"]} color={"white"} lineHeight={["70px", "100px", "100px", "100px", "100px", "100px"]}>MyBlog | {data?.Category.name}</Heading> <br />
                         </Flex>
                     </Flex>
 
