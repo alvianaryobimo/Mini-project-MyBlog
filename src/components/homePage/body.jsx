@@ -64,6 +64,7 @@ export const Home = () => {
                             return (
                                 <>
                                     <Box key={index} onClick={() => handleClick(item.id)}
+                                        _hover={{ transform: "scale(1.1)" }}
                                         bg={"white"}
                                         w={["150px", "170px", "250px"]} h={["200px", "220px"]}
                                         my={"10px"} mx={"10px"}

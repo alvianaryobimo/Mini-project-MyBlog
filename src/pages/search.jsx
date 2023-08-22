@@ -123,6 +123,7 @@ export const Search = () => {
                                 return (
                                     <>
                                         <Box key={index} onClick={() => onClick(item.id)}
+                                            _hover={{ transform: "scale(1.1)" }}
                                             mb={"10px"} bg={"white"}
                                             mt={"8px"} border={"3px solid #408E91"}
                                             ml={"8px"} mr={"10px"}
