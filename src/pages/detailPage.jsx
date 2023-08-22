@@ -19,7 +19,7 @@ export const DetailPage = () => {
         }
     }
     useEffect(() => {
-        getarticel();
+        getarticel();   
     }, []);
     return (
         <>
