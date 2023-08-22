@@ -38,10 +38,10 @@ export const Navbar = () => {
             </Link>
             <Flex mr={"10px"} fontFamily={"mono"} color={"white"}>
 
-                <Text mr={["17px", "18px"]} my={"auto"}>
+                <Text _hover={{ transform: "scale(1.2)" }} mr={["17px", "18px"]} my={"auto"}>
                     <Link to="/" ><AiOutlineHome size={19} /></Link>
                 </Text>
-                <Text mr={["18px", "20px"]} my={"auto"}>
+                <Text _hover={{ transform: "scale(1.2)" }} mr={["18px", "20px"]} my={"auto"}>
                     <Link to="/search"><SearchIcon /></Link>
                 </Text>
                 {token ?
@@ -56,6 +56,7 @@ export const Navbar = () => {
                                     variant={"unstyled"}
                                     color="white"
                                     margin={"auto"}
+                                    _hover={{ transform: "scale(1.2)" }}
                                 />
                                 <MenuList borderColor={"white"} bgColor="#71B280">
                                     <MenuItem bgColor="#71B280" color="white" cursor="pointer">

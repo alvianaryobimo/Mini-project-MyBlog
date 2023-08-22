@@ -19,7 +19,7 @@ export const DetailPage = () => {
         }
     }
     useEffect(() => {
-        getarticel();   
+        getarticel();
     }, []);
     return (
         <>
@@ -64,8 +64,8 @@ export const DetailPage = () => {
                 </Box>
             </Flex>
             <Flex mt={"30px"}>
-                <DeleteButton />
-                <Button color={"white"} bg={"teal"} mt={"12px"} mr={"10px"} size={"xs"}>
+                <DeleteButton  />
+                <Button _hover={{ transform: "scale(1.1)" }} color={"white"} bg={"teal"} mt={"12px"} mr={"10px"} size={"xs"}>
                     <CheckCircleIcon /> ‎ Like this article
                 </Button>
             </Flex>

@@ -4,13 +4,12 @@ import { Box, Button, useToast } from "@chakra-ui/react"
 import { useNavigate, useParams } from "react-router-dom"
 
 export const DeleteButton = () => {
-    const navigate = useNavigate()
     const { id } = useParams()
     const toast = useToast()
+    const navigate = useNavigate()
     const onDelete = async () => {
         try {
-            const response = await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/blog/remove/${id}`)
-            console.log(response);
+            await Axios.patch(`https://minpro-blog.purwadhikabootcamp.com/api/blog/remove/${id}`);
             toast({
                 title: "Success",
                 description: "Delete blog success!",
@@ -19,17 +18,14 @@ export const DeleteButton = () => {
                 isClosable: true,
                 position: "top"
             })
-            setTimeout(() => {
-                navigate('/myBlog')
-            }, 2000)
+            setTimeout(() => navigate('/myBlog'), 2000);
         } catch (err) {
             console.log(err);
         }
     }
-
     return (
         <Box>
-            <Button onClick={onDelete} variant={"unstyled"} ><DeleteIcon /></Button>
+            <Button _hover={{ transform: "scale(1.3)" }} onClick={onDelete} variant={"unstyled"} ><DeleteIcon /></Button>
         </Box>
-    )
+    );
 }

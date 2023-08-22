@@ -76,27 +76,29 @@ export const Search = () => {
             </Flex>
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
-                    <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w="570px" p="15px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
-                        <FormControl>
-                            <FormLabel color="white">Search</FormLabel>
-                            <Input color="white" type="search" value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
-                            <Select color="white" value={selectedCategory}
-                                onChange={(e) => setSelectedCategory(e.target.value)}
-                                mt="10px" borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#334756" }}>
-                                <option style={{ backgroundColor: "#408E91" }} value="">All</option>
-                                {categories?.map((category) => (
-                                    <option style={{ backgroundColor: "#408E91" }} key={category.id} value={category.id}>
-                                        {category.name}
-                                    </option>
-                                ))}
-                            </Select>
+                    <Flex justifyContent={"center"}>
+                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w="700px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                            <Flex margin={"20px"}>
+                                <Input w={"500px"} color="white" type="search" value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
+                                <Select ml={"10px"} color="white" w={"200px"} value={selectedCategory}
+                                    onChange={(e) => setSelectedCategory(e.target.value)}
+                                    borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#334756" }}>
+                                    <option style={{ backgroundColor: "#408E91" }} value="">All</option>
+                                    {categories?.map((category) => (
+                                        <option style={{ backgroundColor: "#408E91" }} key={category.id} value={category.id}>
+                                            {category.name}
+                                        </option>
+                                    ))}
+                                </Select>
+                            </Flex>
                             {/* <Button mt={5} onClick={handleSearch} bgColor="#408E91" color="white" _hover={{ transform: "scale(1.1)" }}>
                                 Search
                             </Button> */}
-                        </FormControl>
-                    </Box>
+                            {/* </FormControl> */}
+                        </Box>
+                    </Flex>
                     <Box mb={"20px"} className="search-content" bgGradient="linear(#71B280, #408E91)"
                         w="1115px" mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
                         <Flex justifyContent="space-between">
