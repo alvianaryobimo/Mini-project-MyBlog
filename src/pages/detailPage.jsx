@@ -29,18 +29,18 @@ export const DetailPage = () => {
                     <Flex justifyContent={"center"}>
                         <Flex textAlign={"center"} justifyContent={"center"} mt={"100px"} rounded='md'
                             boxShadow='0px 0px 5px black' h={["70px", "100px", "100px", "100px", "100px", "100px"]}
-                            bgGradient="linear(#408E91, #71B280)" w={["230px", "300px", "400px", "500px", "600px", "800px"]} >
+                            bgGradient="linear(#408E91, #71B280)" w={["250px", "350px", "400px", "500px", "600px", "800px"]} >
                             <Heading display={"flex"} justifyContent={"center"} fontFamily={"monospace"} fontSize={["22px", "30px", "35px", "35px", "35px"]} color={"white"} lineHeight={["70px", "100px", "100px", "100px", "100px", "100px"]}>MyBlog | {data?.Category.name}</Heading> <br />
                         </Flex>
                     </Flex>
 
                     <Flex justifyContent={"center"} >
-                        <Flex justifyContent={"center"} mt={"20px"} h={"250px"} w={["200px", "500px", "800px"]} bg={"white"}>
+                        <Flex justifyContent={"center"} mt={"20px"} w={["200px", "500px", "800px"]} bg={"white"}>
                             <Image src={`https://minpro-blog.purwadhikabootcamp.com/${data?.imageURL}`} >
                             </Image></Flex>
                     </Flex>
                     <Flex justifyContent={"center"}>
-                        <Flex w={["200px", "500px", "800px"]} textAlign={"center"} fontSize={"45px"} fontWeight={"bold"} fontFamily={"monospace"} mt={"13px"} justifyContent={"center"}>
+                        <Flex w={["200px", "500px", "800px"]} textAlign={"center"} fontSize={["30px","45px"]} fontWeight={"bold"} fontFamily={"monospace"} mt={"13px"} justifyContent={"center"}>
                             <Text>{data?.title}</Text>
                         </Flex>
                     </Flex>
@@ -53,8 +53,8 @@ export const DetailPage = () => {
                             pl={"10px"} mt={"20px"}
                             rounded='md'
                             boxShadow='0px 0px 5px black'
-                            bg={"white"} w={["200px", "350px", "500px", "700px", "1200px", "1400px"]} >
-                            <Flex mb={"10px"} mt={"10px"} w={["190px", "337px", "495px", "700px", "1200px", "1400px"]} >
+                            bg={"white"} w={["250px", "470px", "750px", "800px", "1200px"]} >
+                            <Flex mb={"10px"} mt={"10px"} w={["230px", "467px", "737px", "795px", "1200px"]} >
                                 <p lineHeight={"100px"}>
                                     {data?.content}  </p>
                             </Flex>
