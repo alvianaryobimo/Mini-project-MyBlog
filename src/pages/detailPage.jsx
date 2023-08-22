@@ -53,8 +53,8 @@ export const DetailPage = () => {
                             pl={"10px"} mt={"20px"}
                             rounded='md'
                             boxShadow='0px 0px 5px black'
-                            bg={"white"} w={["200px", "350px", "500px", "700px", "1000px", "1200px"]} >
-                            <Flex mb={"10px"} mt={"10px"} w={["200px", "350px", "500px", "700px", "1000px", "1200px"]} >
+                            bg={"white"} w={["200px", "350px", "500px", "700px", "1200px", "1400px"]} >
+                            <Flex mb={"10px"} mt={"10px"} w={["190px", "337px", "495px", "700px", "1200px", "1400px"]} >
                                 <p lineHeight={"100px"}>
                                     {data?.content}  </p>
                             </Flex>
