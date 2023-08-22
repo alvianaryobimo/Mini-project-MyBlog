@@ -40,21 +40,20 @@ export const DetailPage = () => {
                             </Image></Flex>
                     </Flex>
                     <Flex justifyContent={"center"}>
-                        <Flex w={["200px", "500px", "800px"]} textAlign={"center"} fontSize={["30px","45px"]} fontWeight={"bold"} fontFamily={"monospace"} mt={"13px"} justifyContent={"center"}>
+                        <Flex w={["200px", "500px", "800px"]} textAlign={"center"} fontSize={["30px", "45px"]} fontWeight={"bold"} fontFamily={"monospace"} mt={"13px"} justifyContent={"center"}>
                             <Text>{data?.title}</Text>
                         </Flex>
                     </Flex>
                     <Flex fontSize={"15px"} fontFamily={"monospace"} mt={"0px"} justifyContent={"center"}>
-
                         <Text>by {data?.User.username}</Text>
                     </Flex>
                     <Flex justifyContent={"center"}>
                         <Box justifyContent={"center"}
-                            pl={"10px"} mt={"20px"}
+                            px={"10px"} mt={"20px"}
                             rounded='md'
                             boxShadow='0px 0px 5px black'
-                            bg={"white"} w={["250px", "470px", "750px", "800px", "1200px"]} >
-                            <Flex mb={"10px"} mt={"10px"} w={["230px", "467px", "737px", "795px", "1200px"]} >
+                            bg={"white"}  >
+                            <Flex mb={"10px"} mt={"10px"} maxW={["230px", "467px", "737px", "795px", "1200px"]} >
                                 <p lineHeight={"100px"}>
                                     {data?.content}  </p>
                             </Flex>
