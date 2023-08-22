@@ -8,35 +8,14 @@ import { Avatar, Box, Button, Divider, Flex, FormControl, FormLabel, Heading, Im
 
 export const Search = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [categories, setCategories] = useState();
     const [searchResults, setSearchResults] = useState([]);
+    const [categories, setCategories] = useState();
+    const [selectedCategory, setSelectedCategory] = useState('');
     const [sorting, setSorting] = useState("DESC");
-    const [page, setPage] = useState(null);
     const [totalPage, setTotalPage] = useState(null);
+    const [page, setPage] = useState(null);
+    const [reload, setReload] = useState(true)
     const navigate = useNavigate()
-    useEffect(() => {
-        fetchCategories();
-    }, []);
-    const onClick = (id) => {
-        navigate(`/detailPage/${id}`)
-    }
-    const handleLatest = () => {
-        setSorting("DESC")
-    }
-    const handleEarliest = () => {
-        setSorting("ASC")
-    }
-    const goToPrevPage = () => {
-        if (page > 1) {
-            handleSearch(page - 1)
-        }
-    }
-    const goToNextPage = () => {
-        if (page < totalPage) {
-            handleSearch(page + 1)
-        }
-    }
     const fetchCategories = async () => {
         try {
             const response = await Axios.get('https://minpro-blog.purwadhikabootcamp.com/api/blog/allCategory');
@@ -59,12 +38,37 @@ export const Search = () => {
             console.log(err);
         }
     };
-    const handleInputChange = (event) => {
-        setSearchTerm(event.target.value);
-    };
-    const handleCategoryChange = (event) => {
-        setSelectedCategory(event.target.value);
-    };
+    // const handleLatest = () => {
+    //     setSorting("DESC")
+    // }
+    // const handleEarliest = () => {
+    //     setSorting("ASC")
+    // }
+    const goToPrevPage = () => {
+        if (page > 1) {
+            handleSearch(page - 1);
+            setReload(!reload);
+        }
+    }
+    const goToNextPage = () => {
+        if (page < totalPage) {
+            handleSearch(page + 1);
+            setReload(!reload);
+        }
+    }
+    // const handleInputChange = (event) => {
+    //     setSearchTerm(event.target.value);
+    // };
+    // const handleCategoryChange = (event) => {
+    //     setSelectedCategory(event.target.value);
+    // };
+    const onClick = (id) => {
+        navigate(`/detailPage/${id}`)
+    }
+    useEffect(() => {
+        handleSearch();
+        fetchCategories();
+    }, [reload, sorting, searchTerm]);
     return (
         <>
             <Flex mt={"0px"}>
@@ -72,11 +76,15 @@ export const Search = () => {
             </Flex>
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
-                    <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" h="220px" w="570px" p="15px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                    <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w="570px" p="15px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
                         <FormControl>
                             <FormLabel color="white">Search</FormLabel>
-                            <Input color="white" type="text" value={searchTerm} onChange={handleInputChange} borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
-                            <Select color="white" value={selectedCategory} onChange={handleCategoryChange} mt="10px" borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#334756" }}>
+                            <Input color="white" type="search" value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
+                            <Select color="white" value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
+                                mt="10px" borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#334756" }}>
                                 <option style={{ backgroundColor: "#408E91" }} value="">All</option>
                                 {categories?.map((category) => (
                                     <option style={{ backgroundColor: "#408E91" }} key={category.id} value={category.id}>
@@ -84,13 +92,13 @@ export const Search = () => {
                                     </option>
                                 ))}
                             </Select>
-                            <Button mt={5} onClick={handleSearch} bgColor="#408E91" color="white" _hover={{ transform: "scale(1.1)" }}>
+                            {/* <Button mt={5} onClick={handleSearch} bgColor="#408E91" color="white" _hover={{ transform: "scale(1.1)" }}>
                                 Search
-                            </Button>
+                            </Button> */}
                         </FormControl>
                     </Box>
                     <Box mb={"20px"} className="search-content" bgGradient="linear(#71B280, #408E91)"
-                        w="1115px" h="850px" mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                        w="1115px" mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
                         <Flex justifyContent="space-between">
                             <Heading mt={"10px"} ml={"10px"} color="white" fontSize="18px">Here are your search results</Heading>
                             <Menu>
@@ -98,14 +106,17 @@ export const Search = () => {
                                     <Button bgColor="#408E91" color="white" h="20px" mt={"10px"} mr={"10px"}>Sort</Button>
                                 </MenuButton>
                                 <MenuList bgColor="#408E91">
-                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer" onClick={handleEarliest}>Earliest</MenuItem>
+                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
+                                    // onClick={handleEarliest}
+                                    >Earliest</MenuItem>
                                     <Divider color="gray.900" />
-                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer" onClick={handleLatest}>Latest</MenuItem>
+                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
+                                    // onClick={handleLatest}
+                                    >Latest</MenuItem>
                                 </MenuList>
                             </Menu>
                         </Flex>
                         <Flex mt={"10px"} justifyContent={"center"} flexWrap={"wrap"}>
-
                             {searchResults?.map((item, index) => {
                                 return (
                                     <>
