@@ -56,9 +56,6 @@ export const Search = () => {
             setReload(!reload);
         }
     }
-    // const handleInputChange = (event) => {
-    //     setSearchTerm(event.target.value);
-    // };
     // const handleCategoryChange = (event) => {
     //     setSelectedCategory(event.target.value);
     // };
@@ -77,7 +74,7 @@ export const Search = () => {
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
                     <Flex justifyContent={"center"}>
-                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w="700px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w={["250px", "430px", "700px"]} borderRadius="10px" boxShadow={"0px 0px 7px black"}>
                             <Flex margin={"20px"}>
                                 <Input w={"500px"} color="white" type="search" value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -99,78 +96,86 @@ export const Search = () => {
                             {/* </FormControl> */}
                         </Box>
                     </Flex>
-                    <Box mb={"20px"} className="search-content" bgGradient="linear(#71B280, #408E91)"
-                        w="1115px" mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
-                        <Flex justifyContent="space-between">
-                            <Heading mt={"10px"} ml={"10px"} color="white" fontSize="18px">Here are your search results</Heading>
-                            <Menu>
-                                <MenuButton >
-                                    <Button bgColor="#408E91" color="white" h="20px" mt={"10px"} mr={"10px"}>Sort</Button>
-                                </MenuButton>
-                                <MenuList bgColor="#408E91">
-                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
-                                    // onClick={handleEarliest}
-                                    >Earliest</MenuItem>
-                                    <Divider color="gray.900" />
-                                    <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
-                                    // onClick={handleLatest}
-                                    >Latest</MenuItem>
-                                </MenuList>
-                            </Menu>
-                        </Flex>
-                        <Flex mt={"10px"} justifyContent={"center"} flexWrap={"wrap"}>
-                            {searchResults?.map((item, index) => {
-                                return (
-                                    <>
-                                        <Box key={index} onClick={() => onClick(item.id)}
-                                            _hover={{ transform: "scale(1.1)" }}
-                                            mb={"10px"} bg={"white"}
-                                            mt={"8px"} border={"3px solid #408E91"}
-                                            ml={"8px"} mr={"10px"}
-                                            borderRadius={"5px"}
-                                            boxShadow='0px 0px 2px '
-                                            w={"250px"} h={"220px"}>
-                                            <Flex justifyContent={"center"} bg={"white"}
-                                                border={"3px solid #408E91"}
-                                                borderRadius={"10px"} mt={"16px"} ml={"22px"}
-                                                w={"200px"} h={"100px"} >
-                                                <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
-                                            </Flex>
-                                            <Text mt={"3px"}
-                                                overflow="hidden"
-                                                whiteSpace="nowrap"
-                                                textOverflow="ellipsis"
-                                                maxWidth="190px"
-                                                ml={"28px"} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
-                                                {item.title}
-                                            </Text>
-                                            <Flex mt={"6px"} ml={"20px"}>
-                                                <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={"md"} mt={'0px'} />
-                                                <Box mt={"3px"}>
-                                                    <Text ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}>
-                                                        by {item.User.username}
-                                                    </Text>
-                                                    <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>
-                                                        {item.Category.name}
-                                                    </Text>
-                                                </Box>
-
-                                            </Flex>
-                                        </Box>
-
-                                    </>
-                                );
-                            }
-                            )}
-                        </Flex>
-                        {page === null ? null : (
-                            <Flex mt="20px" justifyContent="center">
-                                <Button bgColor="#71B280" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
-                                <Button mx="5px" disabled bgColor="#71B280" color="white">{page}</Button>
-                                <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#71B280" color="white" ><ArrowForwardIcon /></Button>
+                    <Flex justifyContent={"center"}>
+                        <Box mb={"20px"} className="search-content" bgGradient="linear(#71B280, #408E91)"
+                            w={["full", "430px", "700px", "1000px", "1115px"]} mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                            <Flex justifyContent="space-between">
+                                <Heading mt={"10px"} ml={"10px"} color="white" fontSize="18px">Here are your search results</Heading>
+                                <Menu>
+                                    <MenuButton >
+                                        <Button bgColor="#408E91" color="white" h="20px" mt={"10px"} mr={"10px"}>Sort</Button>
+                                    </MenuButton>
+                                    <MenuList bgColor="#408E91">
+                                        <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
+                                        // onClick={handleEarliest}
+                                        >Earliest</MenuItem>
+                                        <Divider color="gray.900" />
+                                        <MenuItem _hover={{ bgColor: "#71B280" }} bgColor="#408E91" color="white" cursor="pointer"
+                                        // onClick={handleLatest}
+                                        >Latest</MenuItem>
+                                    </MenuList>
+                                </Menu>
                             </Flex>
-                        )}
-                    </Box>
+                            <Flex mt={"10px"} justifyContent={"center"} flexWrap={"wrap"}>
+                                {searchResults?.map((item, index) => {
+                                    return (
+                                        <>
+                                            <Box key={index} onClick={() => onClick(item.id)}
+                                                _hover={{ transform: "scale(1.1)" }}
+                                                mb={"10px"} bg={"white"}
+                                                mt={"8px"} border={"3px solid #408E91"}
+                                                ml={"8px"} mr={"10px"}
+                                                borderRadius={"5px"}
+                                                boxShadow='0px 0px 2px '
+                                                w={["150px", "170px", "250px"]} h={["200px", "220px"]}>
+                                                <Flex justifyContent={"center"}>
+                                                    <Flex justifyContent={"center"} bg={"white"}
+                                                        border={"3px solid #408E91"}
+                                                        borderRadius={"10px"} mt={"16px"}
+                                                        w={["120px", "150px", "200px"]} h={["80px", "100px"]}>
+                                                        <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+                                                    </Flex>
+                                                </Flex>
+                                                <Text mt={"3px"}
+                                                    overflow="hidden"
+                                                    whiteSpace="nowrap"
+                                                    textOverflow="ellipsis"
+                                                    maxWidth={["130px", "195px"]}
+                                                    ml={["12px", "15px", "28px"]} fontSize={"20px"} fontFamily={"monospace"} color={"black"}>
+                                                    {item.title}
+                                                </Text>
+                                                <Flex mt={["12px", "6px"]} ml={["10px", "10px", "20px"]}>
+                                                    <Avatar src={`https://minpro-blog.purwadhikabootcamp.com/${item.User.imgProfile}`} size={["sm", "md"]} mt={["8px", '0px']} />
+                                                    <Box mt={"3px"}>
+                                                        <Text
+                                                            overflow="hidden"
+                                                            whiteSpace="nowrap"
+                                                            textOverflow="ellipsis"
+                                                            maxWidth={["80px", "100px", "165px"]}
+                                                            ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"}>
+                                                            by {item.User.username}
+                                                        </Text>
+                                                        <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>
+                                                            {item.Category.name}
+                                                        </Text>
+                                                    </Box>
+
+                                                </Flex>
+                                            </Box>
+                                        </>
+                                    );
+                                }
+                                )}
+                            </Flex>
+                            {page === null ? null : (
+                                <Flex mt="20px" justifyContent="center">
+                                    <Button bgColor="#71B280" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
+                                    <Button mx="5px" disabled bgColor="#71B280" color="white">{page}</Button>
+                                    <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#71B280" color="white" ><ArrowForwardIcon /></Button>
+                                </Flex>
+                            )}
+                        </Box>
+                    </Flex>
                 </Box>
             </Flex>
             <Footer />

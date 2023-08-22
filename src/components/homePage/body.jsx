@@ -74,7 +74,7 @@ export const Home = () => {
                                         <Flex justifyContent={"center"}>
                                             <Flex justifyContent={"center"} bg={"white"}
                                                 border={"3px solid #408E91"}
-                                                borderRadius={"10px"} mt={"16px"}
+                                                borderRadius={"10px"} mt={"16px"}  ml={"22px"}
                                                 w={["120px", "150px", "200px"]} h={["80px", "100px"]} >
                                                 <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
                                             </Flex>
