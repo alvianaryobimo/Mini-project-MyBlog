@@ -81,7 +81,7 @@ export const Search = () => {
                                     borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
                                 <Select ml={"10px"} color="white" w={"200px"} value={selectedCategory}
                                     onChange={(e) => setSelectedCategory(e.target.value)}
-                                    borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#334756" }}>
+                                    borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor:"#71B280" }}>
                                     <option style={{ backgroundColor: "#408E91" }} value="">All</option>
                                     {categories?.map((category) => (
                                         <option style={{ backgroundColor: "#408E91" }} key={category.id} value={category.id}>
@@ -124,14 +124,14 @@ export const Search = () => {
                                                 _hover={{ transform: "scale(1.1)" }}
                                                 mb={"10px"} bg={"white"}
                                                 mt={"8px"} border={"3px solid #408E91"}
-                                                ml={"8px"} mr={"10px"}
+                                                mx={"auto"}
                                                 borderRadius={"5px"}
                                                 boxShadow='0px 0px 2px '
                                                 w={["150px", "170px", "250px"]} h={["200px", "220px"]}>
                                                 <Flex justifyContent={"center"}>
                                                     <Flex justifyContent={"center"} bg={"white"}
                                                         border={"3px solid #408E91"}
-                                                        borderRadius={"10px"} mt={"16px"}
+                                                        borderRadius={"10px"} mt={"16px"} mx={"auto"}
                                                         w={["120px", "150px", "200px"]} h={["80px", "100px"]}>
                                                         <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
                                                     </Flex>

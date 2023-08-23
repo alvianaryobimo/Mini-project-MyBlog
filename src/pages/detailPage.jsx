@@ -6,14 +6,18 @@ import { DeleteButton } from "../components/deleteItem";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 
 export const DetailPage = () => {
     const params = useParams();
+    const username = useSelector((state) => state.user.value.username)
     const [data, setData] = useState();
+    const [user, setUser] = useState()
     const getarticel = async (data) => {
         try {
             const response = await Axios.get(`https://minpro-blog.purwadhikabootcamp.com/api/blog/${params.id}`, data);
             setData(response.data[0]);
+            setUser(response.data[0].User.username)
         } catch (error) {
             console.log(error);
         }
@@ -35,7 +39,7 @@ export const DetailPage = () => {
                     </Flex>
 
                     <Flex justifyContent={"center"} >
-                        <Flex justifyContent={"center"} mt={"20px"} w={["200px", "500px", "800px"]} bg={"white"}>
+                        <Flex justifyContent={"center"} mt={"20px"} h={["120px", "500px"]} w={["200px", "500px", "800px"]} bg={"white"}>
                             <Image src={`https://minpro-blog.purwadhikabootcamp.com/${data?.imageURL}`} >
                             </Image></Flex>
                     </Flex>
@@ -45,7 +49,14 @@ export const DetailPage = () => {
                         </Flex>
                     </Flex>
                     <Flex fontSize={"15px"} fontFamily={"monospace"} mt={"0px"} justifyContent={"center"}>
-                        <Text>by {data?.User.username}</Text>
+                        <Text>by {data?.User.username} ‎</Text>
+                        <Text>|</Text>
+                        <Text color="black"> ‎ {new Date(`${data?.createdAt}`).toLocaleDateString("en-us", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric"
+                        })}.
+                        </Text>
                     </Flex>
                     <Flex justifyContent={"center"}>
                         <Box justifyContent={"center"}
@@ -62,9 +73,9 @@ export const DetailPage = () => {
                     </Flex>
                 </Box>
             </Flex>
-            <Flex mt={"30px"}>
-                <DeleteButton />
-                <Button _hover={{ transform: "scale(1.1)" }} color={"white"} bg={"teal"} mt={"12px"} mr={"10px"} size={"xs"}>
+            <Flex justifyContent={"center"} mb={"20px"} mt={"20px"}>
+                {user === username ? <DeleteButton color="#FF4C29" /> : null}
+                <Button _hover={{ transform: "scale(1.1)" }} color={"white"} bg={"teal"} mt={"11px"} size={"xs"}>
                     <CheckCircleIcon /> ‎ Like this article
                 </Button>
             </Flex>

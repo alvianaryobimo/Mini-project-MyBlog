@@ -13,7 +13,7 @@ export const DeleteButton = () => {
             toast({
                 title: "Success",
                 description: "Delete blog success!",
-                status: 'success',
+                status: 'error',
                 duration: 2500,
                 isClosable: true,
                 position: "top"
@@ -25,7 +25,7 @@ export const DeleteButton = () => {
     }
     return (
         <Box>
-            <Button _hover={{ transform: "scale(1.3)" }} onClick={onDelete} variant={"unstyled"} ><DeleteIcon /></Button>
+            <Button _hover={{ transform: "scale(1.3)" }} color={"red"} onClick={onDelete} variant={"unstyled"} ><DeleteIcon /></Button>
         </Box>
     );
 }

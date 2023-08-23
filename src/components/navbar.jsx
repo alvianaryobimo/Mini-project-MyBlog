@@ -61,14 +61,14 @@ export const Navbar = () => {
                                 <MenuList borderColor={"white"} bgColor="#71B280">
                                     <MenuItem bgColor="#71B280" color="white" cursor="pointer">
                                         <Box>
-                                            <Text fontWeight={"bold"}>{data.username}</Text>
+                                            <Text fontSize={"15px"} fontWeight={"bold"}>{data.username}</Text>
                                             <Text fontWeight={"bold"} fontSize={"10px"}>{data.email}</Text>
                                         </Box>
                                     </MenuItem>
                                     <Divider color="white" />
-                                    <MenuItem as={Link} to={"/profile"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer">Profile & Settings</MenuItem>
-                                    <MenuItem as={Link} to={"/myblog"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer">MyBlog</MenuItem>
-                                    <MenuItem _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="white" cursor="pointer" >MyLiked</MenuItem>
+                                    <MenuItem as={Link} to={"/profile"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="black" cursor="pointer">Profile & Settings</MenuItem>
+                                    <MenuItem as={Link} to={"/myblog"} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="black" cursor="pointer">MyBlog</MenuItem>
+                                    <MenuItem _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="black" cursor="pointer" >MyLiked</MenuItem>
                                     <MenuItem onClick={onLogout} _hover={{ bgColor: "#408E91" }} bgColor="#71B280" color="red" cursor="pointer" >Log Out</MenuItem>
                                 </MenuList>
                             </Menu>
