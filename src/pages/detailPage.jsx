@@ -79,9 +79,9 @@ export const DetailPage = () => {
                     <CheckCircleIcon /> ‎ Like this article
                 </Button>
             </Flex>
-            <Box mt={"10px"}>
+            <Flex mb={"0px"} mt={"10px"}>
                 <Footer />
-            </Box>
+            </Flex>
         </>
     );
 }

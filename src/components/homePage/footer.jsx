@@ -5,7 +5,7 @@ import { SiLinkedin } from 'react-icons/si';
 export const Footer = () => {
     return (
         <Flex display={"flex"} justifyContent={"space-between"}
-            w={"full"} h={"260px"}
+            w={"full"} h={"260px"} zIndex={"99"}
             boxShadow={"0px 0px 10px black"}
             bgGradient="linear(#408E91, #71B280)">
             <Box my={"auto"}>

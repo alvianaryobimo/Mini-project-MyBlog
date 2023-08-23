@@ -43,17 +43,18 @@ export const Home = () => {
                         border={"1px solid gray"}
                         borderRadius={"10px"}
                         boxShadow='0px 0px 6px black'
-                        w={["full", "full", "700px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
-                    <Flex justifyContent={"center"}
-                        bg={"white"} mt={["20px", "0px"]}
-                        border={"1px solid gray"} ml={["0p", "20px"]}
-                        borderRadius={"10px"}
-                        boxShadow='0px 0px 6px black'
-                        w={["full", "300px", "300px", "300px"]} h={"504px"}><TabsBox /></Flex>
+                        w={["full","full", "500px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
+                    <Flex justifyContent={"center"}>
+                        <Flex justifyContent={"center"}
+                            bg={"white"} mt={["20px", "0px"]}
+                            border={"1px solid gray"} ml={["0p", "20px"]}
+                            borderRadius={"10px"}
+                            boxShadow='0px 0px 6px black'
+                            w={["full", "300px", "300px", "300px"]} h={"504px"}><TabsBox /></Flex>
+                    </Flex>
                 </Flex>
             </Box>
-
-            <Flex justifyContent={"center"} mb={"30px"}>
+            <Flex bg={"white"} justifyContent={"center"} mb={"30px"}>
                 <Box boxShadow='0px 0px 6px black'
                     borderRadius={"10px"}
                     w={["full", "1170px"]} bg={"gray.200"}
@@ -74,7 +75,7 @@ export const Home = () => {
                                         <Flex justifyContent={"center"}>
                                             <Flex justifyContent={"center"} bg={"white"}
                                                 border={"3px solid #408E91"}
-                                                borderRadius={"10px"} mt={"16px"}  mx={["auto"]}
+                                                borderRadius={"10px"} mt={"16px"} mx={["auto"]}
                                                 w={["120px", "150px", "200px"]} h={["80px", "100px"]} >
                                                 <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
                                             </Flex>
