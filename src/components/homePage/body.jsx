@@ -110,7 +110,7 @@ export const Home = () => {
                             );
                         })}
                     </Flex>
-                    <Flex justifyContent={"center"} my="10px">
+                    <Flex pb={"15px"}  justifyContent={"center"} my="10px">
                         <Button bgColor="#408E91" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
                         <Button mx="5px" disabled bgColor="#408E91" color="white">{page}</Button>
                         <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#408E91" color="white"><ArrowForwardIcon /></Button>

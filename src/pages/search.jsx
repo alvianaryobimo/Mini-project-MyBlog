@@ -168,7 +168,7 @@ export const Search = () => {
                                 )}
                             </Flex>
                             {page === null ? null : (
-                                <Flex mt="20px" justifyContent="center">
+                                <Flex pb={"15px"}  mt="20px" justifyContent="center">
                                     <Button bgColor="#71B280" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
                                     <Button mx="5px" disabled bgColor="#71B280" color="white">{page}</Button>
                                     <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#71B280" color="white" ><ArrowForwardIcon /></Button>

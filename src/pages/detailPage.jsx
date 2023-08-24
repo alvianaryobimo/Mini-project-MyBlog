@@ -105,9 +105,8 @@ export const DetailPage = () => {
             </Flex>
             <Flex>
                 <Box
-                    border={"1px solid gray"}
                     w={["full", "full"]} bg={"gray.200"}
-                    pt={"10px"} mt={"22px"}>
+                    pt={"10px"} boxShadow={"0px 0px 2px grey"}>
                     <Flex justifyContent={"center"}>
                         <Heading fontSize={["20px", "30px"]} fontFamily={"mono"} color={"#71B280"}>Suggestion For You</Heading>
                     </Flex>
@@ -163,14 +162,14 @@ export const DetailPage = () => {
                             );
                         })}
                     </Flex>
-                    <Flex justifyContent={"center"} my="10px">
+                    <Flex pb={"15px"} justifyContent={"center"} my="10px">
                         <Button bgColor="#408E91" color="white" onClick={goToPrevPage} disabled={page === 1}><ArrowBackIcon /></Button>
                         <Button mx="5px" disabled bgColor="#408E91" color="white">{page}</Button>
                         <Button onClick={goToNextPage} disabled={page === totalPage} bgColor="#408E91" color="white"><ArrowForwardIcon /></Button>
                     </Flex>
                 </Box>
             </Flex>
-            <Flex mb={"0px"} mt={"0px"}>
+            <Flex >
                 <Footer />
             </Flex>
         </>
