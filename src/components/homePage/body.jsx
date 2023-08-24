@@ -30,7 +30,7 @@ export const Home = () => {
 
     return (
         <>
-            <Flex bg={"white"} pt={"95px"} direction={["column", "column", "row"]} justifyContent={"center"} >
+            <Flex bg={"white"} pt={"95px"} direction={["column", "column", "row"]} justifyContent={"center"}>
                 <Flex justifyContent={"center"} bg={"gray"} border={"1px solid black"} borderRadius={"10px"}
                     w={["full", "full", "500px", "600px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
                 <Flex justifyContent={"center"}>
@@ -53,12 +53,12 @@ export const Home = () => {
                                         w={["150px", "170px", "250px"]} h={["200px", "220px"]}
                                         bg={"white"} my={"10px"} mx={"10px"}
                                         border={"3px solid #408E91"} borderRadius={"5px"} boxShadow='0px 0px 1px'
-                                        _hover={{ transform: "scale(1.1)" }} >
+                                        _hover={{ transform: "scale(1.1)" }}>
                                         <Flex justifyContent={"center"} bg={"white"}
                                             border={"3px solid #408E91"} borderRadius={"10px"}
                                             mt={"16px"} mx={["auto"]}
-                                            w={["120px", "150px", "200px"]} h={["80px", "100px"]} >
-                                            <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+                                            w={["120px", "150px", "200px"]} h={["80px", "100px"]}>
+                                            <Image src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`}></Image>
                                         </Flex>
                                         <Text
                                             overflow="hidden" whiteSpace="nowrap"
@@ -74,7 +74,7 @@ export const Home = () => {
                                                     overflow="hidden" whiteSpace="nowrap"
                                                     textOverflow="ellipsis" maxWidth={["80px", "100px", "165px"]}
                                                     ml={"10px"} fontSize={"14px"} fontFamily={"monospace"} color={"black"} >
-                                                    by {item.User.username}   </Text>
+                                                    by {item.User.username}</Text>
                                                 <Text ml={"10px"} fontSize={"12px"} fontFamily={"monospace"} color={"black"}>{item.Category.name}</Text>
                                             </Box>
                                         </Flex>

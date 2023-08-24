@@ -8,7 +8,7 @@ export const Footer = () => {
             w={"full"} h={["200px", "260px"]} zIndex={"99"}
             boxShadow={"0px 0px 5px black"} bgGradient="linear(#408E91, #71B280)">
             <Box my={"auto"} pl={"20px"}>
-                <Text fontSize={["16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"} >
+                <Text fontSize={["16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"}>
                     News Letter
                 </Text>
                 <Text fontSize={["8px", "10px", "15px"]} mt={"8px"}>
@@ -23,19 +23,17 @@ export const Footer = () => {
                 <Button ml={"1px"} mt={"15px"} size={"sm"}
                     bg={"transparent"} color={"white"}
                     border={"1px solid white"} borderRadius={"50px"}
-                    _hover={{ bgColor: "grey" }}>
-                    Submit
-                </Button>
+                    _hover={{ bgColor: "grey" }}>Submit</Button>
             </Box>
             <Text mt={["40px", "30px", "20px"]} mr={"10px"}
-                fontSize={["12px", "16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"} >
+                fontSize={["12px", "16px", "20px"]} fontFamily={"monospace"} fontWeight={"extrabold"}>
                 Follow & Contact Us
                 <Flex mt={"20px"} justifyContent={"end"}>
                     <Flex mr={"10px"}>
                         <a href="https://www.linkedin.com"><SiLinkedin /></a>
-                    </Flex >
+                    </Flex>
                     <Flex>
-                        <a href="https://www.facebook.com/"><FaFacebook />  </a>
+                        <a href="https://www.facebook.com/"><FaFacebook /></a>
                     </Flex>
                 </Flex>
             </Text>

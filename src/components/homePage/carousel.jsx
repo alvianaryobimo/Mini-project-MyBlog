@@ -49,11 +49,11 @@ export default function Carousel() {
       {data?.map((item, index) => {
         return (
           <SwiperSlide onClick={() => handleClick(item.id)} key={index}>
-            <Image position={"absolute"} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+            <Image position={"absolute"} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`}></Image>
             <Box position={"relative"} h={"full"} w={"full"} bgColor={"rgba(0,0,0,40%)"}>
               <Heading cursor={"pointer"} display={"flex"} justifyContent={"center"}
                 color={"white"} lineHeight={["250px", "504px"]}
-                fontSize={"30px"} fontFamily={"monospace"}   >
+                fontSize={"30px"} fontFamily={"monospace"}>
                 {item.title}</Heading>
             </Box>
           </SwiperSlide>

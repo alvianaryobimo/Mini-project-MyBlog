@@ -36,7 +36,7 @@ export const TabsBox = () => {
                     {data2?.map((item) => {
                         return (
                             <>
-                                <Flex borderBottom={"1px"} onClick={() => handleClick(item.id)} mt={"13px"} >
+                                <Flex borderBottom={"1px"} onClick={() => handleClick(item.id)} mt={"13px"}>
                                     <Avatar mt={'4px'} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} />
                                     <Box>
                                         <Text overflow="hidden" whiteSpace="nowrap"
@@ -53,7 +53,7 @@ export const TabsBox = () => {
                     {data1?.map((item) => {
                         return (
                             <>
-                                <Flex onClick={() => handleClick(item.id)} borderBottom={"1px"} mt={"13px"} >
+                                <Flex onClick={() => handleClick(item.id)} borderBottom={"1px"} mt={"13px"}>
                                     <Avatar mt={'4px'} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} />
                                     <Box>
                                         <Text overflow="hidden" whiteSpace="nowrap"
