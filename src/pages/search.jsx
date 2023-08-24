@@ -74,7 +74,7 @@ export const Search = () => {
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
                     <Flex justifyContent={"center"}>
-                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w={["250px", "430px", "700px"]} borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w={["250px", "430px", "700px"]} borderRadius="5px" boxShadow={"0px 0px 7px black"}>
                             <Flex margin={"20px"}>
                                 <Input w={"500px"} color="white" type="search" value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}

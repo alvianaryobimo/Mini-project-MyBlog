@@ -28,6 +28,10 @@ export default function Carousel() {
   }, []);
   return (
     <Swiper
+      style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
       loop={true} navigation={true}
       className="mySwiper"
       autoplay={{
