@@ -1,10 +1,10 @@
 import Axios from "axios"
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Image, Heading, Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { Image, Heading, Box } from "@chakra-ui/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import "./style.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,21 +22,20 @@ export default function Carousel() {
       console.log(err);
     }
   }
-  const handleClick = (id) => {
-    navigate(`detailPage/${id}`);
-  }
+  const handleClick = (id) => { navigate(`detailPage/${id}`); }
   useEffect(() => {
     getData();
   }, []);
+
   return (
     <Swiper
       effect={'fade'}
+      loop={true}
+      navigation={true}
       style={{
         '--swiper-navigation-color': '#fff',
         '--swiper-pagination-color': '#fff',
       }}
-      loop={true}
-      navigation={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false
@@ -46,18 +45,15 @@ export default function Carousel() {
         dynamicBullets: true,
       }}
       modules={[EffectFade, Autoplay, Navigation, Pagination]}
-      className="mySwiper"
-    >
+      className="mySwiper">
       {data?.map((item, index) => {
         return (
           <SwiperSlide onClick={() => handleClick(item.id)} key={index}>
             <Image position={"absolute"} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
-            <Box h={"full"} w={"full"} bgColor={"rgba(0,0,0,40%)"} position={"relative"}>
-              <Heading
-                cursor={"pointer"}
-                display={"flex"} justifyContent={"center"}
-                lineHeight={["250px", "504px"]} fontSize={"30px"}
-                fontFamily={"monospace"} color={"white"} >
+            <Box position={"relative"} h={"full"} w={"full"} bgColor={"rgba(0,0,0,40%)"}>
+              <Heading cursor={"pointer"} display={"flex"} justifyContent={"center"}
+                color={"white"} lineHeight={["250px", "504px"]}
+                fontSize={"30px"} fontFamily={"monospace"}   >
                 {item.title}</Heading>
             </Box>
           </SwiperSlide>

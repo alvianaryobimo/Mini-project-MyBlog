@@ -17,28 +17,20 @@ export const TabsBox = () => {
             console.log(err);
         }
     }
-    const handleClick = (id) => {
-        navigate(`detailPage/${id}`);
-    }
+    const handleClick = (id) => { navigate(`detailPage/${id}`); }
     useEffect(() => {
         getData();
     }, []);
+
     return (
         <Tabs isFitted w={"500px"} position="relative" variant="unstyled">
             <TabList
-                borderBottom={"1px solid black"}
-                borderTopRadius={"9px"}
-                bgGradient="linear(#408E91, #71B280)"
-                fontFamily={"monospace"}>
+                borderBottom={"1px solid black"} borderTopRadius={"9px"}
+                bgGradient="linear(#408E91, #71B280)" fontFamily={"monospace"}>
                 <Tab>Popular</Tab>
                 <Tab>Recently</Tab>
             </TabList>
-            <TabIndicator
-                mt="-1.5px"
-                height="2px"
-                bg="black"
-                borderRadius="10px"
-            />
+            <TabIndicator mt="-1.5px" height="2px" bg="black" borderRadius="10px" />
             <TabPanels cursor={"pointer"} maxH={"462px"} overflowY={"scroll"}>
                 <TabPanel mt={"-18px"}>
                     {data2?.map((item) => {
@@ -47,11 +39,8 @@ export const TabsBox = () => {
                                 <Flex borderBottom={"1px"} onClick={() => handleClick(item.id)} mt={"13px"} >
                                     <Avatar mt={'4px'} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} />
                                     <Box>
-                                        <Text
-                                            overflow="hidden"
-                                            whiteSpace="nowrap"
-                                            textOverflow="ellipsis"
-                                            maxWidth="200px"
+                                        <Text overflow="hidden" whiteSpace="nowrap"
+                                            textOverflow="ellipsis" maxWidth="200px"
                                             ml={"5px"} w={"full"} fontSize={"20px"} fontFamily={"monospace"}>{item.title}</Text>
                                         <Text mb={"13px"} ml={"5px"}>{item.User.username}</Text>
                                     </Box>
@@ -64,15 +53,13 @@ export const TabsBox = () => {
                     {data1?.map((item) => {
                         return (
                             <>
-                                <Flex borderBottom={"1px"} onClick={() => handleClick(item.id)} mt={"13px"} >
+                                <Flex onClick={() => handleClick(item.id)} borderBottom={"1px"} mt={"13px"} >
                                     <Avatar mt={'4px'} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} />
                                     <Box>
-                                        <Text
-                                            overflow="hidden"
-                                            whiteSpace="nowrap"
-                                            textOverflow="ellipsis"
-                                            maxWidth="200px"
-                                            cursor={"pointer"} ml={"5px"} w={"full"} fontSize={"20px"} fontFamily={"monospace"}>{item.title}</Text>
+                                        <Text overflow="hidden" whiteSpace="nowrap"
+                                            textOverflow="ellipsis" maxWidth="200px"
+                                            ml={"5px"} w={"full"} cursor={"pointer"}
+                                            fontSize={"20px"} fontFamily={"monospace"}>{item.title}</Text>
                                         <Text mb={"13px"} ml={"5px"}>{item.User.username}</Text>
                                     </Box>
                                 </Flex>
