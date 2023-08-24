@@ -9,6 +9,7 @@ import "./style.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
 
 export default function Carousel() {
   const navigate = useNavigate();
@@ -41,11 +42,12 @@ export default function Carousel() {
         disableOnInteraction: false
       }}
       pagination={{
-        clickable: true
+        clickable: true,
+        dynamicBullets: true,
       }}
       modules={[EffectFade, Autoplay, Navigation, Pagination]}
-      className="mySwiper"
     >
+      className="mySwiper"
       {data?.map((item, index) => {
         return (
           <SwiperSlide onClick={() => handleClick(item.id)} key={index}>

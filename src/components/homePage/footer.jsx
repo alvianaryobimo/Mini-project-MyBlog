@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <Flex display={"flex"} justifyContent={"space-between"}
             w={"full"} h={"260px"} zIndex={"99"}
-            boxShadow={"0px 0px 10px black"}
+            boxShadow={"0px 0px 5px black"}
             bgGradient="linear(#408E91, #71B280)">
             <Box my={"auto"}>
                 <Box ml={"20px"}>

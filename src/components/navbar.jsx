@@ -30,7 +30,7 @@ export const Navbar = () => {
             w={"full"}
             h={"70px"}
             justifyContent={"space-between"}
-            boxShadow={"0px 0px 10px black"}>
+            boxShadow={"0px 0px 6px black"}>
             <Link to="/">
                 <Heading fontSize={["25px", "32px"]} cursor={"pointer"} fontFamily={"monospace"} color={"white"} lineHeight={"70px"} ml={"15px"}>
                     MyBlog
