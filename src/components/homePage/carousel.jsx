@@ -46,17 +46,17 @@ export default function Carousel() {
         dynamicBullets: true,
       }}
       modules={[EffectFade, Autoplay, Navigation, Pagination]}
-    >
       className="mySwiper"
+    >
       {data?.map((item, index) => {
         return (
           <SwiperSlide onClick={() => handleClick(item.id)} key={index}>
-            <Image position={"relative"} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
-            <Box h={"full"} w={"full"} bgColor={"rgba(0,0,0,50%)"} position={"absolute"}>
+            <Image position={"absolute"} src={`https://minpro-blog.purwadhikabootcamp.com/${item.imageURL}`} ></Image>
+            <Box h={"full"} w={"full"} bgColor={"rgba(0,0,0,40%)"} position={"relative"}>
               <Heading
                 cursor={"pointer"}
                 display={"flex"} justifyContent={"center"}
-                lineHeight={["250px", "504px"]} fontSize={"35px"}
+                lineHeight={["250px", "504px"]} fontSize={"30px"}
                 fontFamily={"monospace"} color={"white"} >
                 {item.title}</Heading>
             </Box>
