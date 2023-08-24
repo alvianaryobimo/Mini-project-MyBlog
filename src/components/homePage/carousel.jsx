@@ -1,17 +1,18 @@
 import Axios from "axios"
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Image, Heading, Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./style.css";
+import 'swiper/css/effect-fade';
 
 export default function Carousel() {
-  const [data, setData] = useState();
   const navigate = useNavigate();
+  const [data, setData] = useState();
   const getData = async (data1) => {
     try {
       const response = await Axios.get("https://minpro-blog.purwadhikabootcamp.com/api/blog/pagFav?page=1&orderBy=total_fav&sort=DESC", data1);
@@ -28,18 +29,23 @@ export default function Carousel() {
   }, []);
   return (
     <Swiper
+      effect={'fade'}
       style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
-      loop={true} navigation={true}
-      className="mySwiper"
+        '--swiper-navigation-color': '#fff',
+        '--swiper-pagination-color': '#fff',
+      }}
+      loop={true}
+      navigation={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false
-      }} pagination={{
+      }}
+      pagination={{
         clickable: true
-      }} modules={[Autoplay, Navigation, Pagination]}>
+      }}
+      modules={[EffectFade, Autoplay, Navigation, Pagination]}
+      className="mySwiper"
+    >
       {data?.map((item, index) => {
         return (
           <SwiperSlide onClick={() => handleClick(item.id)} key={index}>

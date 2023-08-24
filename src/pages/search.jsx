@@ -74,14 +74,14 @@ export const Search = () => {
             <Flex justifyContent="center" bgColor="whiite">
                 <Box>
                     <Flex justifyContent={"center"}>
-                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w={["250px", "430px", "700px"]} borderRadius="5px" boxShadow={"0px 0px 7px black"}>
+                        <Box mt={"90px"} className="search-section" bgGradient="linear(#408E91, #71B280)" w={["250px", "430px", "700px"]} borderRadius="5px" border={"1px solid gray"}>
                             <Flex margin={"20px"}>
                                 <Input w={"500px"} color="white" type="search" value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     borderColor="white" placeholder="Search..." _placeholder={{ color: "white" }} />
                                 <Select ml={"10px"} color="white" w={"200px"} value={selectedCategory}
                                     onChange={(e) => setSelectedCategory(e.target.value)}
-                                    borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor:"#71B280" }}>
+                                    borderColor="white" focusBorderColor="white" placeholder="Category" _placeholder={{ bgColor: "#71B280" }}>
                                     <option style={{ backgroundColor: "#408E91" }} value="">All</option>
                                     {categories?.map((category) => (
                                         <option style={{ backgroundColor: "#408E91" }} key={category.id} value={category.id}>
@@ -98,7 +98,7 @@ export const Search = () => {
                     </Flex>
                     <Flex justifyContent={"center"}>
                         <Box mb={"20px"} className="search-content" bgGradient="linear(#71B280, #408E91)"
-                            w={["full", "430px", "700px", "1000px", "1115px"]} mt="20px" p="10px 20px" borderRadius="10px" boxShadow={"0px 0px 7px black"}>
+                            w={["full", "430px", "700px", "1000px", "1115px"]} mt="20px" p="10px 20px" borderRadius="10px" >
                             <Flex justifyContent="space-between">
                                 <Heading mt={"10px"} ml={"10px"} color="white" fontSize="18px">Here are your search results</Heading>
                                 <Menu>

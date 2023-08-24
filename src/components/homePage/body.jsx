@@ -40,22 +40,21 @@ export const Home = () => {
                     <Flex
                         justifyContent={"center"}
                         bg={"gray"}
-                        border={"1px solid gray"}
+                        border={"1px solid black"}
                         borderRadius={"10px"}
-                        boxShadow='0px 0px 6px black'
-                        w={["full","full", "500px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
+                        w={["full", "full", "500px", "850px"]} h={["250px", "504px"]}> <Carousel /></Flex>
                     <Flex justifyContent={"center"}>
                         <Flex justifyContent={"center"}
                             bg={"white"} mt={["20px", "0px"]}
                             border={"1px solid gray"} ml={["0p", "20px"]}
                             borderRadius={"10px"}
-                            boxShadow='0px 0px 6px black'
                             w={["full", "300px", "300px", "300px"]} h={"504px"}><TabsBox /></Flex>
                     </Flex>
                 </Flex>
             </Box>
             <Flex bg={"white"} justifyContent={"center"} mb={"30px"}>
-                <Box boxShadow='0px 0px 6px black'
+                <Box
+                    border={"1px solid gray"}
                     borderRadius={"10px"}
                     w={["full", "1170px"]} bg={"gray.200"}
                     pt={"10px"} mt={"22px"}>
@@ -71,7 +70,7 @@ export const Home = () => {
                                         my={"10px"} mx={"10px"}
                                         border={"3px solid #408E91"}
                                         borderRadius={"5px"}
-                                        boxShadow='0px 0px 2px'>
+                                        boxShadow='0px 0px1 px'>
                                         <Flex justifyContent={"center"}>
                                             <Flex justifyContent={"center"} bg={"white"}
                                                 border={"3px solid #408E91"}
